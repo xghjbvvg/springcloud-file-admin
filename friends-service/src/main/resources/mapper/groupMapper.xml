@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.dao.GroupMapper">
+    <resultMap id="groupResult" type="com.company.domain.Group">
+        <id column="id" property="id"/>
+        <result column="groupId" property="groupId"/>
+        <result column="groupName" property="groupName"/>
+        <result column="date" property="date"/>
+        <result column="remark" property="remark"/>
+        <association property="users" column="userId" javaType="com.company.domain.User">
+            <id column="uid" property="id"/>
+            <result column="username" property="username"/>
+            <result column="image_url" property="imageUrl"/>
+            <result column="phone" property="phone"/>
+        </association>
+    </resultMap>
+
+    <select id="getAllGroup" resultMap="groupResult">
+        select g.id,g.groupId,g.groupName,g.date,g.remark,u.id as uid,u.username,u.image_url,u.phone
+        from `user` u inner join group_user gu on u.id = gu.userId
+	    inner join `group` g on gu.groupId = g.id
+        where u.id = #{uid}
+    </select>
+    <select id="checkCode" resultType="int">
+        select count(1)
+        from `group`
+        where groupId = #{groupId}
+    </select>
+</mapper>

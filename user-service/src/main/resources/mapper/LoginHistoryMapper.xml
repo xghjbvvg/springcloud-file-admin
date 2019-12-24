@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.dao.LoginHistoryRepository">
+
+<!--插入登入历史记录-->
+    <insert id="insertHistory">
+        insert into login_history(`date`,browser,device,way,uid)
+        value (#{date},#{browser},#{device},#{way},#{user.id})
+    </insert>
+
+    <select id="findLoginHistory" resultType="com.company.vo.LoginHistory">
+        select `date`,browser,device,way
+        from login_history l left join `user` u on u.id = l.uid
+        where username = #{username}
+    </select>
+
+
+</mapper>

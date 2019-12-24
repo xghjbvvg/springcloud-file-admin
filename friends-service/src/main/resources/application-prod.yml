@@ -1,0 +1,5 @@
+
+upload:
+  path: /usr/local/webserver/nginx/html/mycloud/file/
+  environment: linux
+

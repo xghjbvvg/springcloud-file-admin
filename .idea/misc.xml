@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/service-common/pom.xml" />
+        <option value="$PROJECT_DIR$/service-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/auth/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/image-service/pom.xml" />
+        <option value="$PROJECT_DIR$/email-service/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-admin-service/pom.xml" />
+        <option value="$PROJECT_DIR$/file-service/pom.xml" />
+        <option value="$PROJECT_DIR$/friends-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

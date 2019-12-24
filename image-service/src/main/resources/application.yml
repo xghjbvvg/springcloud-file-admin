@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://120.78.88.169:8761/eureka,http://120.78.88.169:8763/eureka
+server:
+  port: 9001
+
+imgBasePath: http://localhost:9001/static/head
+
+security:
+  oauth2:
+    resource:
+      id: user-service
+      user-info-uri: http://localhost:8763/auth/user
+      prefer-token-info: false

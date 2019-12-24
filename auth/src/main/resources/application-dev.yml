@@ -1,0 +1,7 @@
+eureka:
+  instance:
+    hostname: localhost
+    statuspageUrl: http://localhost:8768/index
+  client:
+    serviceUrl:
+      defaultZone: http://120.78.88.169:8761/eureka,http://120.78.88.169:8762/eureka,http://120.78.88.169:8763/eureka

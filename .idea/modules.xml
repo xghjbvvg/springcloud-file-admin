@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auth/auth.iml" filepath="$PROJECT_DIR$/auth/auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-admin-service/cloud-admin-service.iml" filepath="$PROJECT_DIR$/cloud-admin-service/cloud-admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/email-service/email-service.iml" filepath="$PROJECT_DIR$/email-service/email-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/file-service/file-service.iml" filepath="$PROJECT_DIR$/file-service/file-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/friends-service/friends-service.iml" filepath="$PROJECT_DIR$/friends-service/friends-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-zuul/gateway-zuul.iml" filepath="$PROJECT_DIR$/gateway-zuul/gateway-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/image-service/image-service.iml" filepath="$PROJECT_DIR$/image-service/image-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-common/service-common.iml" filepath="$PROJECT_DIR$/service-common/service-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-eureka/service-eureka.iml" filepath="$PROJECT_DIR$/service-eureka/service-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
+    </modules>
+  </component>
+</project>

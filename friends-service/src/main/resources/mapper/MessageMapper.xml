@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.dao.MessageMapper">
+
+    <resultMap id="messageResult" type="com.company.domain.Message">
+        <id column="mid" property="mid"/>
+        <result column="message" property="message"/>
+        <result column="date" property="date"/>
+        <result column="from" property="from"/>
+        <result column="to" property="to"/>
+        <result column="flag" property="flag"/>
+        <result column="isRead" property="isRead"/>
+    </resultMap>
+
+    <insert id="saveMessage" keyProperty="mid" useGeneratedKeys="true">
+        insert into message(message,`date`,`from`,`to`,flag,isRead)
+        values(#{message},#{date},#{from},#{to},#{flag},#{isRead})
+    </insert>
+</mapper>

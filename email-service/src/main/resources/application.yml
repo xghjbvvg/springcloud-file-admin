@@ -1,0 +1,58 @@
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    status-page-url: http://${eureka.instance.ip-address}:${server.port}/info
+    ip-address: 127.0.0.1:8000
+#    ip-address: 120.78.88.169:8000
+    prefer-ip-address: true
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    service-url:
+#      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+      defaultZone: http://120.78.88.169:8761/eureka/,http://120.78.88.169:8762/eureka/,http://120.78.88.169:8763/eureka/
+
+spring:
+  security:
+    user:
+      name: "client"
+      password: "client"
+  boot:
+    admin:
+      client:
+        url: http://120.78.88.169:8766
+  application:
+    name: email-service
+  mail:
+    username: HuangChiXin6@163.com
+    password: 19971030Hcx
+    host: smtp.163.com
+    properties:
+      mail:
+        smtp:
+          port: 25
+          auth: true
+          starttls:
+            enable: true
+    port: 25
+    default-encoding: UTF-8
+  redis:
+    database: 0
+    host: 120.78.88.169
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+security:
+  oauth2:
+    resource:
+      id: user-service
+      user-info-uri: http://localhost:8763/auth/user
+      prefer-token-info: false
+server:
+  port: 8000
