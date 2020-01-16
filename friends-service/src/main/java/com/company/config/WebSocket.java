@@ -75,18 +75,12 @@ public class WebSocket {
 
 
         try {
-
             Message msg = mapper.readValue(message, Message.class);
-            System.out.println(messageUtil);
-            messageUtil.setMessage(msg);
-            new Thread(messageUtil).start();
 
-            sendtoUser(message,msg.getTo());
+            sendtoUser(message,msg.getTo(),msg);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     /**
@@ -111,17 +105,20 @@ public class WebSocket {
      * @param sendUserId
      * @throws IOException
      */
-    public void sendtoUser(String message,String sendUserId) throws IOException {
+    public void sendtoUser(String message,String sendUserId,Message messageVo) throws IOException {
         String msg = mapper.writeValueAsString(message);
         if (webSocketSet.get(sendUserId) != null) {
-            if(!id.equals(sendUserId))
                 webSocketSet.get(sendUserId).sendMessage(msg);
-            else
-                webSocketSet.get(sendUserId).sendMessage(msg);
+                messageVo.setIsRead(0);
+
         } else {
             //如果用户不在线则返回不在线信息给自己
-            sendtoUser("当前用户不在线",id);
+            sendtoUser("当前用户不在线",id,messageVo);
+            messageVo.setIsRead(1);
         }
+        //保存信息
+        messageUtil.setMessage(messageVo);
+        new Thread(messageUtil).start();
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.company.service.adapter;
 
 import com.company.dao.FileMapper;
+import com.company.dao.FileUserMapper;
 import com.company.vo.FileItem;
 import com.company.service.FileFinderService;
 import com.company.service.enumPackage.TypeName;
@@ -16,7 +17,7 @@ import java.util.regex.Pattern;
 public abstract class FileFinderServiceAdapter implements FileFinderService {
 
     @Autowired
-    FileMapper fileMapper;
+    FileUserMapper fileMapper;
 
     /**
      * 根据路径及文件类型查找，应用find（）方法

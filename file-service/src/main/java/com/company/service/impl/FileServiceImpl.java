@@ -2,12 +2,17 @@ package com.company.service.impl;
 
 import com.company.config.UploadConfig;
 import com.company.dao.FileMapper;
+import com.company.dao.FileUserMapper;
+import com.company.domain.FileUser;
+import com.company.util.SensitiveFilter;
 import com.company.vo.FileVo;
 import com.company.exception.UploadException;
 import com.company.service.adapter.FileServiceAdapter;
 import com.company.util.FileUtils;
+import org.apache.catalina.loader.WebappClassLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,11 +29,16 @@ public class FileServiceImpl extends FileServiceAdapter {
     FileMapper fileMapper;
 
     @Autowired
+    FileUserMapper fileUserMapper;
+
+    @Autowired
     UploadConfig uploadConfig;
+    
 
 
 
-    private final String absolutePath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/";
+
+    private final String absolutePath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/file/common";
 
     /**
      * 上传文件
@@ -46,9 +56,11 @@ public class FileServiceImpl extends FileServiceAdapter {
         name = generateFileName() + "." + split[1];
 //        文件随机名
         String path = uploadPath +"/" +name;
-        System.out.println(uploadPath);
+        
         try {
-            fileMapper.save(wrapperFileVo(userId,path,name,md5, realName));
+            FileVo fileVo = wrapperFileVo(userId, path, name, md5, realName);
+            fileMapper.save(fileVo);
+            fileUserMapper.save(wrapperFileuser(userId,fileVo.getId(),realName,uploadPath));
         } catch (Exception e) {
             System.out.println(e.getMessage());
             java.io.File f = new java.io.File(path);
@@ -75,7 +87,8 @@ public class FileServiceImpl extends FileServiceAdapter {
      * @throws IOException
      */
     @Override
-    public void uploadWithBlock(Long userId, String name,
+    @Transactional
+    public Boolean uploadWithBlock(Long userId, String name,
                                 String md5,
                                 Long size,
                                 Integer chunks,
@@ -85,19 +98,25 @@ public class FileServiceImpl extends FileServiceAdapter {
         String[] split = name.split("\\.");
 //        保存真实名称
         String realName = name;
-//        System.out.println(realName);
-//        name = generateFileName() + "." + split[1];
-//        System.out.println(name);
+        // 使用默认单例（加载默认词典）
+        SensitiveFilter filter = SensitiveFilter.getIntances();
+        String afterFilter = filter.filter(realName,'*');
+        if(realName != afterFilter){
+            return true;
+        }
+
 //        文件随机名
         String path = uploadPath +"/" +name;
         String fileName = getFileName(md5, chunks) + "." + split[1];
-//        System.out.println(fileName);
+
         try {
             FileUtils.writeWithBlock(path, size, file.getInputStream(), file.getSize(), chunks, chunk);
             addChunk(md5, chunk);
             if (isUploaded(md5)) {
                 removeKey(md5);
-                fileMapper.save(wrapperFileVo(userId,path,name,md5,realName));
+                FileVo fileVo = wrapperFileVo(userId, path, name, md5, realName);
+                fileMapper.save(fileVo);
+                fileUserMapper.save(wrapperFileuser(userId,fileVo.getId(),realName,uploadPath));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,22 +126,33 @@ public class FileServiceImpl extends FileServiceAdapter {
                 f.delete();
             }
             throw new UploadException("上传出错");
+
         }
+
+        return true;
     }
 
 
     public  FileVo wrapperFileVo(Long userId, String path, String name, String md5, String realName){
 
         FileVo fileVo = new FileVo(realName, md5, path, new Date());
-        fileVo.setUid(userId);
         fileVo.setAbsolutePath(path.substring(0,path.lastIndexOf("/")-1));
         String[] strings = path.split("/");
-        fileVo.setParentPath(strings[strings.length - 2]);
+        fileVo.setParentName(strings[strings.length - 2]);
         fileVo.setUrl(uploadConfig.getIp() +"/static/"+path.split("static/")[1]);
         System.out.println(fileVo);
         return fileVo;
     }
-
+    public FileUser wrapperFileuser(Long uid,Long fid,String name,String parentPath){
+        FileUser fileuser = new FileUser();
+        fileuser.setUid(uid);
+        fileuser.setFid(fid);
+        fileuser.setName(name);
+        fileuser.setParentPath(parentPath);
+        fileuser.setFlag(true);
+        fileuser.setPath(parentPath+"/"+name);
+        return fileuser;
+    }
     /**
      * 检查Md5判断文件是否已上传
      * false表示已经存在
@@ -135,7 +165,6 @@ public class FileServiceImpl extends FileServiceAdapter {
     public boolean checkMd5(String md5, Long uid) {
         FileVo fileVo = new FileVo();
         fileVo.setMd5(md5);
-        fileVo.setUid(uid);
         return fileMapper.getByFile(fileVo) == null;
     }
 
@@ -143,32 +172,34 @@ public class FileServiceImpl extends FileServiceAdapter {
     public void initUserFile(Long userId) {
 //            String absolutePath = ClassUtils.getDefaultClassLoader().getResource("").getPath()+"static/";
 //            System.out.println(6666);
-            String[] folder = new String[]{userId.toString(),"my","picture","document","movie"};
+            String[] folder = new String[]{userId.toString(),"my","pic","doc","vedio","music"};
             String temp = absolutePath ;
 
             for (int i = 1; i < folder.length; i++) {
-                String str = folder[0]+"/"+folder[i];
-                String path  = temp+str;
-
-                FileVo fileVo = new FileVo();
+                 /* FileVo fileVo = new FileVo();
                 fileVo.setName(folder[i]);
                 fileVo.setUploadTime(new Date());
                 fileVo.setPath(path);
-                fileVo.setParentPath(folder[0]);
+                fileVo.setParentName(folder[0]);
                 fileVo.setAbsolutePath(temp);
-                fileVo.setUid(userId);
+
                 String url= uploadConfig.getIp()+"/static/"+str;
-                fileVo.setUrl(url);
+                fileVo.setUrl(url);*/
+                String str = "/"+folder[i];
+                String path  = temp+str;
+                FileUser fileUser = new FileUser();
+                fileUser.setUid(userId);
+                fileUser.setName(folder[i]);
+                fileUser.setParentId("#"+userId);
+                fileUser.setFlag(false);
                 try{
-                    int save = fileMapper.save(fileVo);
+                    int save = fileUserMapper.save(fileUser);
                     System.out.println(save);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-                System.out.println(fileVo);
                 java.io.File file = new java.io.File(path);
                 file.mkdirs();
-
             }
         }
 

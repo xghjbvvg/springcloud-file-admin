@@ -1,6 +1,7 @@
 package com.company.service.adapter;
 
 import com.company.dao.FileMapper;
+import com.company.dao.FileUserMapper;
 import com.company.vo.FileItem;
 import com.company.service.FileMenuService;
 import com.company.vo.FileVo;
@@ -21,7 +22,7 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
     @Value("${eureka.instance.ip-address}")
     private String ip;
     @Autowired
-    FileMapper fileMapper;
+    FileUserMapper fileMapper;
 
 
     /**
@@ -30,10 +31,11 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
      * @param uid
      * @return
      */
-    public List<FileItem> getAllFileTItems(Long uid,String basePath) {
+    public List<FileItem> getAllFileItems(Long uid,String basePath,boolean flag) {
 //        File file = new File(path);
 //        File[] list = file.listFiles();
-        List<FileVo> fileVoList = fileMapper.getById(uid,basePath);
+        //System.out.println("basePath:"+basePath);
+        List<FileVo> fileVoList = fileMapper.findByUid(uid,basePath,flag);
 
         List<FileItem> allFile = new ArrayList<FileItem>();
         if (fileVoList.size() != 0) {
@@ -61,10 +63,10 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
         String uri = f.toURI().getPath();
         String split = null;
         fileItem.setUrl(fileVo.getUrl());
-//        System.out.println(split);
-        fileItem.setAbsolutePath(fileVo.getPath());
+        fileItem.setPath(fileVo.getPath());
+        fileItem.setAbsolutePath(fileVo.getAbsolutePath());
         //父路径
-        fileItem.setParentPath(fileVo.getAbsolutePath()+fileVo.getParentPath());
+        fileItem.setParentName(fileVo.getParentName());
         //修改时间
         fileItem.setDateMillis(f.lastModified());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");

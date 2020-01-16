@@ -9,25 +9,33 @@
         <result column="path" property="path"/>
         <result column="upload_time" property="uploadTime"/>
         <result column="absolutePath" property="absolutePath"/>
-        <result column="parentPath" property="parentPath"/>
-        <result column="uid" property="uid"/>
+        <result column="parentName" property="parentName"/>
         <result column="url" property="url"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,md5,path,upload_time,absolutePath,parentPath,url,uid
+        id,name,md5,path,upload_time,absolutePath,parentName,url
     </sql>
 
     <select id="getById" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from file
-        where uid = #{id} and parentPath = #{path}
+        where parentName = #{path}
     </select>
 
+    <delete id="deleteInitData">
+        DELETE
+        FROM
+            file t
+        WHERE
+            t.NAME IN ( SELECT * FROM ( SELECT NAME FROM file LIMIT 0, 5 ) o )
+            AND NAME = #{name}
+    </delete>
+
     <insert id="save" keyProperty="id" useGeneratedKeys="true">
-        insert into file(name,md5,path,upload_time,absolutePath,parentPath,url,uid)
-        values(#{name},#{md5},#{path},#{uploadTime},#{absolutePath},#{parentPath},#{url},#{uid})
+        insert into file(name,md5,path,upload_time,absolutePath,parentName,url)
+        values(#{name},#{md5},#{path}, now(),#{absolutePath},#{parentName},#{url})
     </insert>
 
     <update id="update">
@@ -58,7 +66,7 @@
         delete from file
         where uid = #{uid}
         <if test="isFolder">
-            and parentPath = #{path} or name = #{path}
+            and parentName = #{path} or name = #{path}
         </if>
         <if test="!isFolder">
             and path = #{path}
@@ -83,9 +91,7 @@
             <if test="path != null">
                 and path = #{path}
             </if>
-            <if test="uid != null">
-                and uid = #{uid}
-            </if>
+
         </where>
     </select>
 
@@ -100,7 +106,6 @@
                  path like #{path} and name REGEXP #{regex} and uid = #{userId}
             </if>
         </where>
-
     </select>
 
     <select id="findByKey" resultMap="BaseResultMap">

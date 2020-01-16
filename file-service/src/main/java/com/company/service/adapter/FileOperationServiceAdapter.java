@@ -32,7 +32,7 @@ public abstract class FileOperationServiceAdapter implements FileOperationServic
     public List<FileItem> sortBySortType(Long uid,String path, SortType sortType) {
         File file = new File(path);
         List<FileItem> fileItemList = new ArrayList<>();
-        List<FileItem> fileTItems = fileMenuService.getAllFileTItems(uid,path);
+        List<FileItem> fileTItems = fileMenuService.getAllFileItems(uid,path,false);
         return sort(fileTItems, sortType);
     }
 

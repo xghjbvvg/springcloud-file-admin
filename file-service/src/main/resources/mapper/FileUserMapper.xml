@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper  namespace="com.company.dao.FileUserMapper">
+    <resultMap id="FileUserMap" type="com.company.domain.FileUser">
+        <id column="uid" property="uid"/>
+        <id column="fid" property="fid"/>
+        <result column="name" property="name"/>
+        <result column="createTime" property="create_time"/>
+        <result column="parentId" property="parentId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,o.name,md5,path,upload_time,absolutePath,parentName,url
+    </sql>
+    <insert id="save">
+        <if test="flag">
+            INSERT INTO file_user(uid,fid,create_time,name,parentId)
+            VALUES( #{uid}, (select id as fid  from file where path = #{path}), now(), #{name},
+            (select id as parentId from file where path = #{parentPath}) );
+        </if>
+        <if test="!flag">
+            INSERT INTO file_user
+            VALUES( #{uid}, (select id as fid  from file where name = #{name} and id between 1 and 5), now(), #{name},
+            #{parentId});
+
+        </if>
+
+
+
+    </insert>
+
+    <select id="findByUid" resultType="com.company.vo.FileVo">
+        select
+        <include refid="Base_Column_List"/>
+        from file_user o,file f
+        where o.fid = f.id and o.uid = #{uid} and o.parentId =
+        <if test="flag">
+            #{parentName}
+        </if>
+        <if test="!flag">
+            (select id as parentId from file where path =#{parentName})
+        </if>
+
+    </select>
+
+    <delete id="deleteById">
+        delete from file_user where uid = #{uid} and fid = #{fid}
+    </delete>
+
+    <select id="findFileByType" resultType="com.company.vo.FileVo">
+        select  <include refid="Base_Column_List"/>
+        from file_user o left join file f on f.id = o.fid
+        <where>
+            <if test="flag">
+                 o.name NOT REGEXP #{regex} and uid = #{userId}
+            </if>
+            <if test="!flag">
+               o.name REGEXP #{regex} and uid = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByKey" resultType="com.company.vo.FileVo">
+        select  <include refid="Base_Column_List"/>
+        from file_user o left join file f on f.id = o.fid
+        where o.name like  #{key} and uid = #{userId}
+    </select>
+</mapper>

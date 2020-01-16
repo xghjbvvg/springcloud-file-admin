@@ -20,8 +20,8 @@ public class FileVo implements Serializable {
     private String path;
     private Date uploadTime;
     private String absolutePath;
-    private String parentPath;
-    private Long uid;
+    private String parentName;
+    //private Long uid;
     private String url;
 
     public FileVo() {

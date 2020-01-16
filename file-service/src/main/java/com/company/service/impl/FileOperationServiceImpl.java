@@ -2,13 +2,17 @@ package com.company.service.impl;
 
 import com.company.config.UploadConfig;
 import com.company.dao.FileMapper;
+import com.company.dao.FileUserMapper;
+import com.company.domain.FileUser;
 import com.company.service.FileService;
 import com.company.vo.FileItem;
 import com.company.service.adapter.FileOperationServiceAdapter;
+import com.company.vo.FileVo;
 import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -27,6 +31,9 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
     private FileMapper fileMapper;
 
     @Autowired
+    private FileUserMapper fileUSerMapper;
+
+    @Autowired
     FileService fileService;
 
     @Autowired
@@ -42,15 +49,20 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
      */
     @Autowired
     UploadConfig uploadConfig;
+
+    @Transactional
     @Override
     public void mkdir(String path, String filename, Long uid) {
-
-        int save = fileMapper.save(fileServiceImpl.wrapperFileVo(uid, path+"/"+filename, filename, "", filename));
+        System.out.println(path);
+        FileVo fileVo = fileServiceImpl.wrapperFileVo(uid, path + "/" + filename, filename, "", filename);
+        int save = fileMapper.save(fileVo);
+        FileUser fileUser = fileServiceImpl.wrapperFileuser(uid, fileVo.getId(), filename, path);
+        save = fileUSerMapper.save(fileUser);
         if (save > 0){
             File file = new File(path +"/"+ filename);
             file.mkdirs();
         }
-//        System.out.println(uploadConfig.getIp());
+
 
     }
 

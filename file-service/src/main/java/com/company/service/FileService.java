@@ -29,7 +29,7 @@ public interface FileService {
      * @param file
      * @param uploadPath
      */
-    public void uploadWithBlock(Long userId, String name, String md5, Long size, Integer chunks, Integer chunk, MultipartFile file, String uploadPath) throws Exception;
+    public Boolean uploadWithBlock(Long userId, String name, String md5, Long size, Integer chunks, Integer chunk, MultipartFile file, String uploadPath) throws Exception;
 
     /**
      * 检查Md5判断文件是否已上传

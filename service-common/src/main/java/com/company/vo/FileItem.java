@@ -7,7 +7,8 @@ import java.io.Serializable;
 @Data
 public class FileItem implements Serializable {
     private String name;
-    private String parentPath;
+    private String path;
+    private String parentName;
     private String absolutePath;
     private String url;
     private Long dateMillis;

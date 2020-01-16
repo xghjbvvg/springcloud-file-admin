@@ -22,6 +22,8 @@ public interface FileMapper {
      */
     int save(FileVo fileVo);
 
+
+
     /**
      * 更新一行数据
      *
@@ -40,6 +42,8 @@ public interface FileMapper {
 
 
     void deleteData(String path,Long uid,boolean isFolder);
+
+    void  deleteInitData(String name);
 
     /**
      * 根据一个或多个属性获取File

@@ -12,11 +12,11 @@ public class FileMenuServiceImpl extends FileMenuServiceAdapter {
     @Override
     public List<FileItem> getFileMenu(Long uid,String path) {
         String[] split = path.split("/");
-        return super.getAllFileTItems(uid, split[split.length-1]);
+        return super.getAllFileItems(uid, path,false);
     }
 
     @Override
     public List<FileItem> getMainMenu(Long uid) {
-        return super.getAllFileTItems(uid,uid.toString());
+        return super.getAllFileItems(uid,"#"+uid.toString(),true);
     }
 }

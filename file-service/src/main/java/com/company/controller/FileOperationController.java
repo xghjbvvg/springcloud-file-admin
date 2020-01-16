@@ -97,6 +97,7 @@ public class FileOperationController {
      */
     @RequestMapping("/findFileByType")
     public List<FileItem> findFileByType(int num, String path,String userId) {
+        System.out.println(path);
         switch (num) {
             case 1: {
                 return fileFinderService.findFileByImg(path,userId);

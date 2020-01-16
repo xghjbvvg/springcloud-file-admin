@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gateway-service" />
-        <module name="file-service" />
+        <module name="email-service" />
         <module name="service-common" />
         <module name="auth" />
         <module name="cloud-admin-service" />
@@ -15,22 +15,22 @@
         <module name="user-service" />
         <module name="friends-service" />
         <module name="gateway-zuul" />
-        <module name="email-service" />
+        <module name="file-service" />
         <module name="image-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="auth" target="8" />
-      <module name="cloud-admin-service" target="8" />
-      <module name="email-service" target="8" />
-      <module name="file-service" target="8" />
-      <module name="friends-service" target="8" />
-      <module name="gateway-service" target="8" />
-      <module name="gateway-zuul" target="8" />
-      <module name="image-service" target="8" />
-      <module name="service-common" target="8" />
-      <module name="service-eureka" target="8" />
-      <module name="user-service" target="8" />
+      <module name="auth" target="1.8" />
+      <module name="cloud-admin-service" target="1.8" />
+      <module name="email-service" target="1.8" />
+      <module name="file-service" target="1.8" />
+      <module name="friends-service" target="1.8" />
+      <module name="gateway-service" target="1.8" />
+      <module name="gateway-zuul" target="1.8" />
+      <module name="image-service" target="1.8" />
+      <module name="service-common" target="1.8" />
+      <module name="service-eureka" target="1.8" />
+      <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
