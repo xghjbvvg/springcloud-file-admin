@@ -11,8 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -76,14 +75,14 @@ public class FileOperationController {
 
     /**
      * 删除文件
-     *
+     * id:文件id
+     * uid：用户id
      * @param path
      * @return
      */
     @RequestMapping("/delete")
-    public boolean delete(String path,Long uid) {
-//        System.out.println(path);
-        return fileOperationService.delete(path) && fileOperationService.deleteDataInMysql(path,uid);
+    public boolean delete(Long id,String path,Long uid) {
+        return  fileOperationService.deleteDataInMysql(id,path,uid);
     }
 
     /**
@@ -162,5 +161,14 @@ public class FileOperationController {
     public List<FileItem> findFileByKey(String userId, String keyword) {
 
         return fileFinderService.findFilesByKeyword(userId, keyword);
+    }
+
+
+    @PostMapping("/fileShare")
+    public Boolean fileShare(){
+
+        System.out.println(666);
+        //System.out.println(fileItem);
+        return true;
     }
 }

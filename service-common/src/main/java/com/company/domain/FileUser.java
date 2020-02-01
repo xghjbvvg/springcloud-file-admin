@@ -12,5 +12,6 @@ public class FileUser implements Serializable {
     private String parentId;
     private String parentPath;
     private Boolean flag;
+    private Boolean isRoot;
     private String path;
 }

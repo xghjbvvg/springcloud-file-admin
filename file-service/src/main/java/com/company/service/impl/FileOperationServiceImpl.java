@@ -54,16 +54,23 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
     @Override
     public void mkdir(String path, String filename, Long uid) {
         System.out.println(path);
-        FileVo fileVo = fileServiceImpl.wrapperFileVo(uid, path + "/" + filename, filename, "", filename);
-        int save = fileMapper.save(fileVo);
-        FileUser fileUser = fileServiceImpl.wrapperFileuser(uid, fileVo.getId(), filename, path);
-        save = fileUSerMapper.save(fileUser);
-        if (save > 0){
-            File file = new File(path +"/"+ filename);
-            file.mkdirs();
+        FileVo f = fileServiceImpl.checkPath(path+"/"+filename);
+        int save = 0;
+        if(f == null){
+            //不存在
+            FileVo fileVo = fileServiceImpl.wrapperFileVo(uid, path + "/" + filename, filename, "", filename);
+            fileMapper.save(fileVo);
+            FileUser fileUser = fileServiceImpl.wrapperFileuser(uid, fileVo.getId(), filename, path);
+            save = fileUSerMapper.save(fileUser);
+            if (save > 0){
+                File file = new File(path +"/"+ filename);
+                file.mkdirs();
+            }
+        }else{
+            FileUser fileUser = fileServiceImpl.wrapperFileuser(uid, f.getId(), filename, path);
+
+            save = fileUSerMapper.save(fileUser);
         }
-
-
     }
 
     /**
@@ -137,7 +144,7 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
      *
      * @param path
      *
-     * @return
+     * @return/*
      */
     @Override
     public boolean delete(String path) {
@@ -165,16 +172,29 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
     }
 
 
-    public boolean deleteDataInMysql(String path,Long id){
-        String[] split = path.split("/");
-        String s = split[split.length - 1];
+    @Transactional
+    public boolean deleteDataInMysql(Long fid,String path,Long id){
+        try{
+            String[] split = path.split("/");
+            String s = split[split.length - 1];
+            if(!s.contains(".")){
+                List<Long> fidList = fileUSerMapper.findFid(id, fid);
+                fidList.forEach((f) ->{
+                    deleteDataInMysql(f,path,id);
+                });
+            }
+            int count = fileUSerMapper.getCount(fid);
+            fileUSerMapper.deleteData(id,fid,false);
+            System.out.println(count == 1);
+            System.out.println(count);
+            if(count == 1){
+                fileUSerMapper.deleteFile(fid);
+                delete(path);
+            }
 
-        if(s.contains(".")){
-            System.out.println(path);
-            fileMapper.deleteData(path,id,false);
-        }else{
-            s = split[split.length - 1];
-            fileMapper.deleteData(s,id,true);
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
         }
 
         return true;

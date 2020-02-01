@@ -56,6 +56,28 @@ spring:
     multipart:
       max-file-size: 1000000MB
       max-request-size: 1000000MB
+ribbon:
+  eureka:
+    enabled: true
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+# hystrix配置
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 60000
 
 logging:
   level:
@@ -69,6 +91,7 @@ mybatis:
     aggressive-lazy-loading: false
 security:
   oauth2:
+
     resource:
       id: user-service
       user-info-uri: http://localhost:8763/auth/user

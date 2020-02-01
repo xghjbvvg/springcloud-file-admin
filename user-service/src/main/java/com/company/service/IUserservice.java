@@ -14,7 +14,7 @@ public interface IUserservice {
 //                statement="SELECT max(id) from `user`")
     public Long register(User user);
 
-    User getUser(String username);
+    User getUser(User user);
 
     /**
      * 删除用户

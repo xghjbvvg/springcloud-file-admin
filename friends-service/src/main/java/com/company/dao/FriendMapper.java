@@ -1,6 +1,7 @@
 package com.company.dao;
 
 import com.company.domain.Friend;
+import com.company.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,9 +13,14 @@ public interface FriendMapper {
 
     int insertFriend(Friend friend);
 
-    int deleteFriend(Long id);
+    int deleteFriend(Long friendId,Long uid);
 
-    int updateRemark(Long id,String remark);
+    int updateRemark(Long friendId,Long uid,String remark);
 
-    Long checkCode(Long code);
+    User checkCode(Long code);
+
+
+    Friend getFriendDetail(Long friendId);
+
+    User getFriend(Long to);
 }

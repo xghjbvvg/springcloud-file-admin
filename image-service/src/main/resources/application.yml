@@ -6,7 +6,9 @@ server:
   port: 9001
 
 imgBasePath: http://localhost:9001/static/head
-
+spring:
+  application:
+    name: image-service
 security:
   oauth2:
     resource:

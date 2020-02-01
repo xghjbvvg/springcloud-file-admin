@@ -26,11 +26,11 @@ public interface UserRepository {
     public void deleteUser(User user);
 
     /**
-     * 根据用户名获取用户
-     * @param username
+     * 根据用户信息获取用户
+     * @param user
      * @return
      */
-    public User getUser(String username);
+    public User getUser(User user);
 
     /**
      * 是否存在用户

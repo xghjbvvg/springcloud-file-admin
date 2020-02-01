@@ -46,7 +46,7 @@ spring:
         - id:  friends-service
           uri: http://localhost:9091
           predicates:
-            - Path= /websocket/*,/friends/*
+            - Path= /websocket/*,/friends/*,/message/*
 
 #---------------------OAuth2---------------------
 security:

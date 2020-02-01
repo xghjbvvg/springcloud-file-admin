@@ -57,6 +57,7 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
     public FileItem fileItem(FileVo fileVo) {
         File f = new File(fileVo.getPath());
         FileItem fileItem = new FileItem();
+        fileItem.setId(fileVo.getId());
         //名字
         fileItem.setName(fileVo.getName());
         //绝对路径

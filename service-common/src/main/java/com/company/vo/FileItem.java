@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class FileItem implements Serializable {
+    private Long id;
     private String name;
     private String path;
     private String parentName;

@@ -9,13 +9,65 @@
         <result column="message" property="message"/>
         <result column="date" property="date"/>
         <result column="from" property="from"/>
-        <result column="to" property="to"/>
+        <result column="toUser" property="toUser"/>
         <result column="flag" property="flag"/>
         <result column="isRead" property="isRead"/>
+        <association property="to" column="to" javaType="com.company.domain.User">
+            <result column="uid" property="id"/>
+            <result column="username" property="username"/>
+            <result column="image_url" property="imageUrl"/>
+        </association>
     </resultMap>
 
     <insert id="saveMessage" keyProperty="mid" useGeneratedKeys="true">
         insert into message(message,`date`,`from`,`to`,flag,isRead)
-        values(#{message},#{date},#{from},#{to},#{flag},#{isRead})
+        values(#{message},now(),#{from},#{toUser},#{flag},#{isRead})
     </insert>
+    <update id="updateFlag" keyProperty="mid">
+        update message
+        set flag = 3
+        where id = #{mid}
+    </update>
+    <select id="getUserMsg" resultMap="messageResult">
+        select m.id mid,message,`date`,`to` toUser,flag,username,image_url,u.id uid,m.`from`
+        FROM message m left join `user` u  on m.`to` = u.id
+        where <![CDATA[ date_sub(curdate(), interval #{interval} month) <= date(m.date) ]]>
+        and flag between  0 and 1 and  ((`to` = #{uid} and `from` = #{friendId} )
+        or  (`to` = #{friendId} and `from` = #{uid} ))
+        order by date
+
+    </select>
+
+    <select id="getRequestOfFriend" resultType="com.company.vo.FriendVo">
+        select m.id ,message,`date`,`from`,`to`,flag,username,image_url,phone code
+        from message m,`user` u
+        where m.from = u.id and  `to` = #{uid}   and flag between  2 and 4
+    </select>
+
+    <update id="disagree" keyProperty="mid">
+        update message
+        set flag = 4 , message = '已拒绝'
+        where id= #{mid}
+    </update>
+
+    <update id="remove">
+        delete
+        from message
+        where id=#{mid}
+    </update>
+    <insert id="fileShare">
+       insert into file_user
+        values(#{uid},#{fileItem.id},now(),#{fileItem.name},
+        #{parentId})
+    </insert>
+    <sql id="Base_Column_List">
+        id,o.name,md5,path,upload_time,absolutePath,parentName,url
+    </sql>
+    <select id="findFileByUid" resultType="com.company.vo.FileVo">
+        select
+        <include refid="Base_Column_List"/>
+        from file_user o,file f
+        where o.fid = f.id and o.uid = #{uid} and o.parentId = #{parentId}
+
+    </select>
 </mapper>

@@ -27,10 +27,12 @@ public interface FileUserMapper {
     /**
      * 删除一行数据
      *
-     * @param id
+     * @param
      * @return
      */
-    int deleteById(Long id);
+    int deleteData(Long uid,Long fid,boolean flag);
+
+    List<Long> findFid(Long uid,Long parentId);
 
     List<FileVo> findFileByType(String path, String regex, String userId, Boolean flag);
 
@@ -44,5 +46,8 @@ public interface FileUserMapper {
      */
     FileVo getByFile(FileVo fileVo);
 
+    FileVo checkPath(FileVo fileVo);
 
+    int getCount(Long fid);
+    void deleteFile(Long fid);
 }

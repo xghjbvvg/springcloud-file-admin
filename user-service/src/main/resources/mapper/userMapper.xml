@@ -13,11 +13,18 @@
     <select id="getUser" resultType="com.company.domain.User">
         select id,username,password,create_time,email,image_url,phone
         from `user`
-        where username = #{username}
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="id != null">
+               or id = #{id}
+            </if>
+        </where>
     </select>
 
     <insert id="insertUser_Role">
-        insert into user_roles  values (#{uid},1);
+        insert into user_roles  values (#{uid},2);
     </insert>
     <delete id="deleteUser_role">
         delete

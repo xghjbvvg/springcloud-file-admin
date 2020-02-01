@@ -4,39 +4,76 @@
 <mapper namespace="com.company.dao.FriendMapper">
     <resultMap id="friendsResult" type="com.company.domain.Friend">
         <id column="fid" property="id"/>
-        <result column="friendId" property="friendId"/>
+
         <result column="date" property="date"/>
         <result column="remark" property="remark"/>
+        <association property="friend" column="friendId" javaType="com.company.domain.User">
+            <id column="id1" property="id"/>
+            <result column="username1" property="username"/>
+            <result column="image_url1" property="imageUrl"/>
+            <result column="phone1" property="phone"/>
+        </association>
         <association property="user" column="userId" javaType="com.company.domain.User">
-            <id column="id" property="id"/>
-            <result column="username" property="username"/>
-            <result column="image_url" property="imageUrl"/>
-            <result column="phone" property="phone"/>
+            <id column="id2" property="id"/>
+            <result column="username2" property="username"/>
+            <result column="image_url2" property="imageUrl"/>
+            <result column="phone2" property="phone"/>
         </association>
     </resultMap>
 
     <select id="getAllFriend" resultMap="friendsResult">
-        select f.id as fid,friendId,remark,date,u.id as uid,u.username,u.image_url,u.phone
-        from friends f inner join `user` u on f.friendId = u.id
-        where  userId = #{uid}
+        SELECT
+            f.id AS fid,
+            friendId,
+            remark,
+            date,
+            u.id AS id1,
+            u.username username1,
+            u.image_url image_url1,
+            u.phone phone1,
+            u1.id AS id2
+
+        FROM
+            friends f,
+            `user` u,
+            `user` u1
+        WHERE
+            f.friendId = u.id
+            AND f.userId = u1.id
+            AND userId = #{uid}
+
     </select>
-    <insert id="insertFriend" keyProperty="id" useGeneratedKeys="true">
+
+    <select id="getFriendDetail" resultMap="friendsResult">
+        select  remark, f.date, u.id AS id1, u.username username1,u.image_url image_url1,u.phone phone1
+        from friends f,
+            `user` u
+        where f.friendId = u.id
+            AND friendId = #{friendId}
+    </select>
+    <select id="getFriend" resultType="com.company.domain.User">
+        select   id ,username ,image_url imageUrl
+        from `user` u
+        where u.id = #{to}
+    </select>
+    <insert id="insertFriend">
         INSERT INTO friends(friendId,date,remark,userId)
-        VALUES(#{friendId},#{date},#{remark},#{user.id})
+        VALUES(#{friend.id},now(),#{remark},#{user.id}), (#{user.id},now(),#{remark},#{friend.id});
     </insert>
     <delete id="deleteFriend">
         delete
         from friends
-        where id = #{id}
+        where (friendId = #{friendId} and userId = #{uid}) or (friendId = #{uid} and userId = #{friendId});
+
     </delete>
 
     <update id="updateRemark">
         update friends
         set remark = #{remark}
-        where id = #{id}
+        where friendId = #{friendId} and userId =#{uid}
     </update>
-    <select id="checkCode" resultType="long">
-        select id
+    <select id="checkCode" resultType="com.company.domain.User">
+        select id,username
         from `user`
         where phone = #{phone}
     </select>

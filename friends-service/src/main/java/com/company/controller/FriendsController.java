@@ -1,6 +1,8 @@
 package com.company.controller;
 
 import com.company.domain.Friend;
+import com.company.domain.Message;
+import com.company.domain.User;
 import com.company.service.FriendService;
 import com.company.vo.FriendVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +19,83 @@ public class FriendsController {
     FriendService friendService;
 
     @RequestMapping("/getAllFriendsAndGroup")
-    public List<FriendVo> getAllFriendsAndGroup(Long uid){
+    public List<Friend> getAllFriendsAndGroup(Long uid){
         return friendService.getAllFriendsAndGroup(uid);
     }
 
-    @RequestMapping("/insertFriend")
-    public int insertFriend(Long uid, Long code) {
-        return friendService.insertFriend(uid,code);
+    /**
+     * 同意好友请求
+     * @param uid
+     * @param code
+     * @param mid
+     * @return
+     */
+    @RequestMapping("/agree")
+    public int insertFriend(Long uid, Long code,Long mid) {
+        return friendService.insertFriend(uid,code,mid);
     }
 
-    @RequestMapping("/deleteFriend")
-    public int deleteFriend(Long id) {
-        return friendService.deleteFriend(id);
+    /**
+     * 不同意好友请求
+     * @param mid 消息主键
+     * @return
+     */
+    @RequestMapping("/disagree")
+    public int disagree(Long mid){
+        return friendService.disagree(mid);
     }
+
+    /**
+     * 删除好友请求
+     * @param mid
+     * @return
+     */
+    @RequestMapping("/remove")
+    public int remove(Long mid){
+        return friendService.remove(mid);
+    }
+
+
+    /**
+     *
+     * @param uid
+     * @param code 手机号
+     * @return
+     */
+    @RequestMapping("/sendRequestOfFriend")
+    public int sendRequestOfFriend(Long uid, Long code) {
+        return friendService.sendRequestOfFriend(uid,code);
+    }
+
+    @RequestMapping("/getRequestOfFriend")
+    public List<FriendVo> getRequestOfFriend(Long uid){
+        List<FriendVo> requestOfFriend = friendService.getRequestOfFriend(uid);
+        System.out.println(requestOfFriend);
+        return requestOfFriend;
+    }
+
+
+
+    @RequestMapping("/getFriendDetail")
+    public Friend getFriendDEtail(Long friendId){
+        return friendService.getFriendDetail(friendId);
+    }
+
+    @RequestMapping("/getFriend")
+    public User getFriend(Long friendId){
+        return friendService.getFriend(friendId);
+    }
+
 
     @RequestMapping("/updateRemark")
-    public int updateRemark(Long id, String remark) {
-        return friendService.updateRemark(id,remark);
+    public Boolean updateRemark(Long friendId,Long uid,String remark){
+        return friendService.updateRemark(friendId,uid,remark);
     }
+    @RequestMapping("/deleteFriend")
+    public Boolean deleteFriend(Long friendId,Long uid){
+        return friendService.deleteFriend(friendId,uid);
+    }
+
+
 
 }

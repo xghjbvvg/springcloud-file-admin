@@ -5,36 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1772ac4a-bc01-408c-b894-5809cbff9c0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/SystemDataInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/StringPointer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/resources/static/sensi_words.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/resources/static/sw.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/friends-service/jrebel-classpath-21792.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/FileUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/course.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/FeignConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/RequestAttributeHystrixConcurrencyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendHystrixService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/FileServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/FileServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileFinderServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileFinderServiceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileOperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileMenuServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileOperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileOperationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/static/sensi_words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/static/sensi_words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/static/sw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/static/sw.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.sql" beforeDir="false" afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/FriendsServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/FriendsServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/GroupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/GroupMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/MessageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/util/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/util/MessageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/FriendVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/FriendVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/FileUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/FileUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Friend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserUpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserUpdateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/dao/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserservice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +80,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="XML" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -100,7 +118,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29740933" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -272,8 +290,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FriendsServiceApplicationTests.contextLoads" />
         <item itemvalue="Spring Boot.AuthApplication (1)" />
+        <item itemvalue="JUnit.FriendsServiceApplicationTests.contextLoads" />
         <item itemvalue="JUnit.UserServiceApplicationTests.contextLoads" />
         <item itemvalue="JUnit.AuthApplicationTests.contextLoads" />
       </list>
@@ -282,12 +300,12 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.15494393" />
+        <option name="contentProportion" value="0.16939253" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2ce762ce" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3725b257" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -328,7 +346,10 @@
       <workItem from="1577497963737" duration="2284000" />
       <workItem from="1577506859104" duration="5627000" />
       <workItem from="1578383000764" duration="3008000" />
-      <workItem from="1578650839015" duration="71602000" />
+      <workItem from="1578650839015" duration="77354000" />
+      <workItem from="1579227712710" duration="29740000" />
+      <workItem from="1579356698514" duration="86783000" />
+      <workItem from="1580186757451" duration="83241000" />
     </task>
     <servers />
   </component>

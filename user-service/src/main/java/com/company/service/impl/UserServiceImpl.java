@@ -42,8 +42,8 @@ public class UserServiceImpl implements IUserservice {
     }
 
     @Override
-    public User getUser(String username){
-        return userRepository.getUser(username);
+    public User getUser(User user){
+        return userRepository.getUser(user);
     }
 
     @Override

@@ -30,7 +30,7 @@ public interface FileOperationService {
     public boolean delete(String path);
 
 
-    public boolean deleteDataInMysql(String path,Long id);
+    public boolean deleteDataInMysql(Long fid,String path,Long id);
 
     /**
      * 按照文件大小排序，从上到下

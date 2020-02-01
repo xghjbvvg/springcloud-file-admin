@@ -1,8 +1,12 @@
 package com.company.config;
 
 import com.company.domain.Message;
+import com.company.domain.User;
+import com.company.service.FriendFeignClient;
+import com.company.service.FriendService;
 import com.company.service.MessageService;
 import com.company.util.MessageUtil;
+import com.company.vo.FriendVo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,34 +19,46 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 @ServerEndpoint(value = "/websocket/{id}")
 @Component
 public class WebSocket {
     private static int onlineCount = 0;
-    private static ConcurrentHashMap<String, WebSocket> webSocketSet = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<Long, WebSocket> webSocketSet = new ConcurrentHashMap<>();
     private ObjectMapper mapper = new ObjectMapper();
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
     private static Logger log = LogManager.getLogger(WebSocket.class);
-    private String id = "";
+    private Long id = 0L;
+
+    @Autowired
+    private static FriendService friendService;
+    @Autowired
+    public void setFriendFeignClient(FriendService friendService) {
+        WebSocket.friendService = friendService;
+    }
+
 
 
     /**
      * 连接建立成功调用的方法*/
     @OnOpen
-    public void onOpen(@PathParam(value = "id") String id, Session session) {
+    public void onOpen(@PathParam(value = "id") Long id, Session session) {
         this.session = session;
         this.id = id;//接收到发送消息的人员编号
         webSocketSet.put(id, this);     //加入set中
         addOnlineCount();           //在线数加1
         log.info("用户"+id+"加入！当前在线人数为" + getOnlineCount());
-//        try {
-//            sendMessage("连接成功");
-//        } catch (IOException e) {
-//            log.error("websocket IO异常");
-//        }
+        /*try {
+            List<Message> friendVoList =  messageService.getUserMsg(id);
+            String friendVoListStr = mapper.writeValueAsString(friendVoList);
+            System.out.println(friendVoListStr);
+            sendMessage(friendVoListStr);
+        } catch (IOException e) {
+            log.error("websocket IO异常");
+        }*/
     }
 
     /**
@@ -69,15 +85,12 @@ public class WebSocket {
     @OnMessage
     public void onMessage(String message, Session session) {
         log.info("来自客户端的消息:" + message);
-        //可以自己约定字符串内容，比如 内容|0 表示信息群发，内容|X 表示信息发给id为X的用户
-//        String sendMessage = message.split("[|]")[0];
-//        String sendUserId = message.split("[|]")[1];
-
 
         try {
             Message msg = mapper.readValue(message, Message.class);
-
-            sendtoUser(message,msg.getTo(),msg);
+//            User user = friendService.getFriend(msg.getToUser());
+//            msg.setTo(user);
+            sendtoUser(message,msg.getToUser(),msg);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -105,14 +118,14 @@ public class WebSocket {
      * @param sendUserId
      * @throws IOException
      */
-    public void sendtoUser(String message,String sendUserId,Message messageVo) throws IOException {
+    public void sendtoUser(String message,Long sendUserId,Message messageVo) throws IOException {
         String msg = mapper.writeValueAsString(message);
         if (webSocketSet.get(sendUserId) != null) {
-                webSocketSet.get(sendUserId).sendMessage(msg);
-                messageVo.setIsRead(0);
-
+            webSocketSet.get(sendUserId).sendMessage(msg);
+            messageVo.setIsRead(0);
         } else {
             //如果用户不在线则返回不在线信息给自己
+            messageVo.setMessage("当前用户不在线");
             sendtoUser("当前用户不在线",id,messageVo);
             messageVo.setIsRead(1);
         }
@@ -127,7 +140,7 @@ public class WebSocket {
      * @throws IOException
      */
     public void sendtoAll(String message) throws IOException {
-        for (String key : webSocketSet.keySet()) {
+        for (Long key : webSocketSet.keySet()) {
             try {
                 webSocketSet.get(key).sendMessage(message);
             } catch (IOException e) {
