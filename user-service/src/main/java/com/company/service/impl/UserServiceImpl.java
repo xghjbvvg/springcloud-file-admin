@@ -19,7 +19,7 @@ public class UserServiceImpl implements IUserservice {
     @Autowired
     UserRepository userRepository;
 
-    @Resource
+    @Autowired
     IFileService fileService;
 
     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.EmailMapper">
+    <resultMap id="emailMapper" type="com.company.domain.Email">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="htmlContent" property="htmlContent"/>
+        <result column="date" property="date"/>
+        <result column="year" property="year"/>
+        <association property="user" column="uid" javaType="com.company.domain.User">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="email" property="email"/>
+        </association>
+    </resultMap>
+    <insert id="saveEmail">
+        insert into email(content,htmlContent,date,uid,`year`)
+        values (#{content},#{htmlContent},now(),#{user.id},#{year})
+    </insert>
+
+    <select id="getCurrentEmail" resultMap="emailMapper">
+        select e1.id, content,htmlContent,date,uid,`year`,u.email
+        from email e1 left join `user` u on e1.uid = u.id
+        where TO_DAYS(DATE_ADD(e1.date, INTERVAL e1.`year` YEAR)) = TO_DAYS(NOW())
+    </select>
+</mapper>

@@ -41,7 +41,7 @@
     <select id="getByFile" resultType="com.company.vo.FileVo">
         select
         <include refid="Base_Column_List"/>
-        from file_user o left join file f on f.id = o.fid
+        from file f  left join file_user o  on f.id = o.fid
         <where>
             <if test="id != null">
                 uid = #{id}
@@ -108,8 +108,10 @@
             id = #{fid}
     </delete>
 
-    <select id="findFid" resultType="long">
-        select fid from file_user where parentId = #{parentId} and uid =#{uid}
+    <select id="findFid"  resultType="com.company.vo.FileVo">
+        select fid as id,path,o.name
+        from file_user o left join file f on f.id = o.fid
+        where parentId = #{parentId} and uid =#{uid}
     </select>
     <select id="findFileByType" resultType="com.company.vo.FileVo">
         select

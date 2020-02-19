@@ -3,8 +3,10 @@ package com.company.service.impl;
 import com.company.dao.MessageMapper;
 import com.company.domain.Message;
 import com.company.service.MessageService;
+import com.company.util.DateUtil;
 import com.company.vo.FileItem;
 import com.company.vo.FileVo;
+import com.company.vo.MessageSessionVo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,7 +17,9 @@ import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -48,13 +52,14 @@ public class MessageServiceImpl implements MessageService {
     public List<Message> getUserMsg(Long uid, Long friendId, int interval) {
         List<Message> userMsg = messageMapper.getUserMsg(uid, friendId, interval);
         userMsg.forEach((message)->{
-            if(message.getFlag().equals(0)){
-                try {
+            try {
+                message.setDate(DateUtil.formatDate(message.getDate()));
+                if(message.getFlag().equals(0)){
                     FileItem fileItem = mapper.readValue(message.getMessage(), FileItem.class);
                     message.setFileItem(fileItem);
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
         return userMsg;
@@ -63,31 +68,55 @@ public class MessageServiceImpl implements MessageService {
     private static boolean flag = true;
     @Override
     @Transactional
-    public Boolean fileShare(Long uid, Long friendId, FileItem fileItem, Long parentId) {
+    public Boolean fileShare(Long uid, Long friendId, FileItem fileItem, Long parentId, boolean b) {
         try{
             //messageMapper.fileShare(uid,friendId,fileItem,parentId);
             if(fileItem.getIsFolder()){
                 //文件夹
                 List<FileVo> fileByUid = messageMapper.findFileByUid(friendId, fileItem.getId());
-                if(!flag){
+                if(!b){
+                    //修改文件保存父级目录id
                     parentId = fileItem.getId();
                 }else{
-                    flag = false;
+                    b = false;
                 }
                 for (FileVo fileVo:fileByUid) {
 
                     FileItem item = fileItem(fileVo);
                     if(!item.getName().contains(".")){
-                        fileShare(uid,friendId,item, parentId);
+                        fileShare(uid,friendId,item, parentId, b);
                     }
                     messageMapper.fileShare(uid,friendId,item,parentId);
                 }
+            }else{
+                messageMapper.fileShare(uid,friendId,fileItem,parentId);
             }
+            return true;
         }catch(Exception e){
             e.printStackTrace();
             return false;
         }
+
+    }
+
+    @Override
+    public  List<MessageSessionVo> getMsgSession(Long uid) {
+        return messageMapper.getMsgSession(uid);
+    }
+
+    @Override
+    public Boolean updateMsgRead(Long uid, Long friendId) {
+        try{
+            messageMapper.updateMsgRead(friendId,uid);
+        }catch(Exception e){
+            return false;
+        }
         return true;
+    }
+
+    @Override
+    public Integer getUnreadMsgCount(Long uid) {
+        return messageMapper.getUnreadMsgCount(uid);
     }
 
     /**
@@ -139,5 +168,6 @@ public class MessageServiceImpl implements MessageService {
 //        System.out.println(fileItem);
         return fileItem;
     }
+
 
 }

@@ -29,4 +29,6 @@ public interface IUserUpdateService {
     public String updatePass(User user);
 
     void updateImageUrl(User user);
+
+    Boolean updatePassByEmail(User user);
 }

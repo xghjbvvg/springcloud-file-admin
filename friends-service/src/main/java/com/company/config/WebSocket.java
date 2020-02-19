@@ -20,6 +20,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @ServerEndpoint(value = "/websocket/{id}")
@@ -65,8 +66,8 @@ public class WebSocket {
      * 连接关闭调用的方法
      */
     @OnClose
-    public void onClose() {
-        webSocketSet.remove(this);  //从set中删除
+    public void onClose(@PathParam(value = "id") Long id) {
+        webSocketSet.remove(id);  //从set中删除
         subOnlineCount();           //在线数减1
         log.info("有一连接关闭！当前在线人数为" + getOnlineCount());
     }
@@ -113,21 +114,19 @@ public class WebSocket {
     }
 
     /**
-     * 发送信息给指定ID用户，如果用户不在线则返回不在线信息给自己
+     * 发送信息给指定ID用户，
      * @param message
      * @param sendUserId
      * @throws IOException
      */
     public void sendtoUser(String message,Long sendUserId,Message messageVo) throws IOException {
         String msg = mapper.writeValueAsString(message);
-        if (webSocketSet.get(sendUserId) != null) {
+        if (webSocketSet.get(messageVo.getToUser()) != null) {
             webSocketSet.get(sendUserId).sendMessage(msg);
             messageVo.setIsRead(0);
         } else {
-            //如果用户不在线则返回不在线信息给自己
-            messageVo.setMessage("当前用户不在线");
-            sendtoUser("当前用户不在线",id,messageVo);
             messageVo.setIsRead(1);
+
         }
         //保存信息
         messageUtil.setMessage(messageVo);

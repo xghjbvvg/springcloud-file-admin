@@ -37,6 +37,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/user/isExistPhone").permitAll()
                 .antMatchers("/user/isExistEmail").permitAll()
                 .antMatchers("/user/verificationCode").permitAll()
+                .antMatchers("/user/updatePassByEmail").permitAll()
+
                 .antMatchers("/user/**").authenticated()
                 .and()
                 .httpBasic();

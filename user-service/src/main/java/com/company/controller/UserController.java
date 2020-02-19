@@ -20,7 +20,6 @@ public class UserController {
 
     @GetMapping("/register")
     public Long register(User user){
-
         return userservice.register(user);
     }
 

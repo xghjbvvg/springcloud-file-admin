@@ -88,4 +88,6 @@ public interface UserRepository {
 
 
     List<Group> getAllGroup();
+
+    void updatePassByEmail(User user);
 }

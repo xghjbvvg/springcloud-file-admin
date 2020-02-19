@@ -1,0 +1,31 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://120.78.88.169:8762/eureka
+server:
+  port: 9001
+imgBasePath: http://120.78.88.169:8763/static/head
+
+spring:
+  application:
+    name: image-service
+  servlet:
+    multipart:
+      max-file-size: 10000000
+      max-request-size: 10000000
+  zipkin:
+    base-url: http://47.112.188.28:9411/
+    locator:
+      discovery:
+        enabled: true
+  boot:
+    admin:
+      client:
+        url: http://120.78.88.169:8080
+
+security:
+  oauth2:
+    resource:
+      id: user-service
+      user-info-uri: http://120.78.88.169:8763/auth/user
+      prefer-token-info: false

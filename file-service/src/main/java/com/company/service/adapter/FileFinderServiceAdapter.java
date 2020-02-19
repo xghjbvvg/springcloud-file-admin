@@ -36,7 +36,7 @@ public abstract class FileFinderServiceAdapter implements FileFinderService {
     FileMenuServiceImpl fileMenuService;
 
     /**
-     * 根据路径及文件类型查找实际操作并把结果装入集合中
+     * 根据文件类型查找实际操作并把结果装入集合中
      *
      * @param fileItemList
      * @param

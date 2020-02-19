@@ -1,5 +1,10 @@
 package com.company.service;
 
+import com.company.domain.Email;
+import com.company.domain.Question;
+
+import java.util.List;
+
 public interface IEmailService {
     /**
      *
@@ -16,4 +21,8 @@ public interface IEmailService {
      * @return
      */
     Boolean isEquals(String toMail,String code);
+
+    Boolean sendLetterByEmail(List<Email> emails);
+
+    Boolean sendReplyToUser(Question question);
 }

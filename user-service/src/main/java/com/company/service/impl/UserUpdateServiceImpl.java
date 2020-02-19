@@ -43,4 +43,19 @@ public class UserUpdateServiceImpl implements IUserUpdateService {
     public void updateImageUrl(User user){
         userRepository.updateImageUrl(user);
     }
+
+    @Override
+    public Boolean updatePassByEmail(User user) {
+        try{
+            //密码加密
+            String encode = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encode);
+            userRepository.updatePassByEmail(user);
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }

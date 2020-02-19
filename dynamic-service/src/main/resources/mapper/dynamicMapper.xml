@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.dao.DynamicMapper">
+    <resultMap id="dynamicMapper" type="com.company.domain.Dynamic">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="htmlContent" property="htmlContent"/>
+        <result column="date" property="date"/>
+        <result column="starCount" property="starCount"/>
+        <result column="firstImage" property="firstImage"/>
+        <result column="visible" property="visible"/>
+        <result column="isStar" property="isStar"/>
+        <association property="user" column="uid" javaType="com.company.domain.User">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="image_url" property="imageUrl"/>
+        </association>
+    </resultMap>
+    <insert id="write" useGeneratedKeys="true" keyProperty="id">
+        insert into dynamic(content,htmlContent,date,starCount,uid,firstImage,visible)
+        values(#{content},#{htmlContent},now(),0,#{user.id},#{firstImage},#{visible})
+    </insert>
+
+    <select id="getAllDynamic" resultMap="dynamicMapper">
+       select d.id,content,htmlContent,visible,date,starCount,uid id,firstImage,
+        username,image_url,(case  when d1.userId is null then 'false' else 'true' end) isStar
+        from user u,dynamic d left join user_dynamic d1
+				on  d.id = d1.dynamicId
+       WHERE
+		u.id = d.uid and (d.uid in (select friendId from friends where userId = #{uid}) or d.uid = #{uid} or visible = 1)
+         order by date desc
+        limit #{currentPage},9
+    </select>
+    <select id="getDynamicById" resultMap="dynamicMapper">
+        select d.id,content,htmlContent,visible,date,starCount,uid id,firstImage,
+        username,image_url,(case  when d1.userId is null then 'false' else 'true' end) isStar
+        from user u,dynamic d left join user_dynamic d1
+				on  d.id = d1.dynamicId
+        where u.id = d.uid and d.id = #{id}
+    </select>
+
+    <select id="getUserDynamic" resultMap="dynamicMapper">
+        select d.id,content,htmlContent,visible,date,starCount,uid id,firstImage,
+        username,image_url,(case  when d1.userId is null then 'false' else 'true' end) isStar
+        from user u,dynamic d left join user_dynamic d1
+				on  d.id = d1.dynamicId
+        where u.id = d.uid and u.id = #{uid}
+    </select>
+
+    <select id="getStartCountByUid" resultType="Integer">
+        select ifnull(sum(starCount),0)
+        from dynamic
+        where uid = #{uid}
+    </select>
+    <update id="updateVote">
+        update dynamic
+        set starCount = starCount+#{num}
+        where id = #{did} and uid=#{uid}
+    </update>
+    <insert id="saveVoteRelation">
+        insert into user_dynamic
+        values(#{uid},#{did})
+    </insert>
+    <delete id="deleteVoteRelation">
+        delete
+        from user_dynamic
+        where userId=#{uid} and dynamicId=#{did}
+    </delete>
+
+    <delete id="deleteDynamic">
+        delete
+        from dynamic
+        where id = #{id}
+    </delete>
+</mapper>

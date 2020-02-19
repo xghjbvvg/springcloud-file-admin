@@ -1,0 +1,95 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://120.78.88.169:8762/eureka
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          # 是否与服务发现组件进行结合，通过serviceId转发到具体的服务实例。默认为false，为true代表开启基于服务发现的路由规则。
+          enabled: true
+      routes:
+        # -----------------------鉴权模块----------------
+        - id: auth-service
+          # 路由指向具体的服务实例
+          uri: http://120.78.88.169:8768
+          # 带指定请求头的URL转发到相应的服务实例
+          predicates:
+            - Path= /oauth/*,/auth/*
+        #          filters:
+        #            # 对请求进行截断
+        #            - StripPrefix= 1
+        #            - name: Retry
+        #              args:
+        #              retries: 3
+        #              fallbackUri: 'forward:/fallback'
+        - id: user-service
+          uri: http://47.112.188.28:8001
+          predicates:
+            - Path= /user/*
+        - id: image-service
+          uri: http://118.31.4.159:9001
+          predicates:
+            - Path= /static/**,/upload
+        - id: email-service
+          uri: http://118.31.4.159:8000
+          predicates:
+            - Path= /email/**
+        - id: file-service
+          uri: http://47.112.188.28:9090
+          predicates:
+            - Path= /file/**
+        - id:  friends-service
+          uri: http://47.112.188.28:9091
+          predicates:
+            - Path= /websocket/*,/friends/*,/message/*
+        - id:  dynamic-service
+          uri: http://47.112.188.28:9092
+          predicates:
+            - Path= /dynamic/**
+        - id:  more-service
+          uri: http://118.31.4.159:9093
+          predicates:
+            - Path= /more/**
+        - id:  admin-service
+          uri: http://118.31.4.159:9094
+          predicates:
+            - Path= /admin/**
+  zipkin:
+    base-url: http://47.112.188.28:9411/
+    locator:
+      discovery:
+        enabled: true
+  boot:
+    admin:
+      client:
+        url: http://120.78.88.169:8080
+
+
+#---------------------OAuth2---------------------
+security:
+  oauth2:
+    client:
+      access-token-uri: http://47.112.188.28:${server.port}/oauth/token
+      user-authorization-uri: http://47.112.188.28:${server.port}/oauth/authorize
+      client-id: webapp
+    resource:
+      user-info-uri:  http://47.112.188.28:${server.port}/auth/user
+      prefer-token-info: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3500
+
+server:
+  port: 8763

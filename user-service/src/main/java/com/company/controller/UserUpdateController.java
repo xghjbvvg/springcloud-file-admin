@@ -3,6 +3,7 @@ package com.company.controller;
 import com.company.domain.User;
 import com.company.service.IUserUpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,9 +51,17 @@ public class UserUpdateController {
        return userUpdateService.updatePass(user);
     }
 
+    @RequestMapping("/updatePassByEmail")
+    public Boolean updatePassByEmail(User user){
+        return userUpdateService.updatePassByEmail(user);
+    }
+
 
     @RequestMapping("/updateImgUrl")
     public void updateImageUrl(User user){
          userUpdateService.updateImageUrl(user);
     }
+
+
+
 }

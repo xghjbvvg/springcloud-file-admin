@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
-
-@FeignClient(value = "file-service", fallback = FileHystrixService.class)
+@FeignClient(value = "file-service")
 public interface IFileService {
     @GetMapping("/file/initFile/{uid}")
     public Boolean initFile(@PathVariable("uid")  Long uid);

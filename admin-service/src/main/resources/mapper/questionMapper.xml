@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.QuestionMapper">
+    <resultMap id="questionMapper" type="com.company.domain.Question">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="date" property="date"/>
+        <result column="title" property="title"/>
+        <result column="fromEmail" property="fromEmail"/>
+        <result column="flag" property="flag"/>
+    </resultMap>
+    <insert id="saveQuestion" useGeneratedKeys="true" keyProperty="id">
+        insert into question(content,title,date,fromEmail,flag)
+        values (#{content},#{title},now(),#{fromEmail},#{flag})
+    </insert>
+
+    <select id="getQuestions" resultMap="questionMapper">
+        select id, content,title,date,fromEmail,flag
+        from question
+        <if test="flag != null">
+            where flag= #{flag}
+        </if>
+
+    </select>
+
+    <update id="updateQuestion">
+        update question
+        set flag = 2
+        where id =#{id} and fromEmail=#{fromEmail}
+    </update>
+</mapper>

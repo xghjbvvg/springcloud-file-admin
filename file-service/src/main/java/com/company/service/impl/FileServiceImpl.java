@@ -9,13 +9,13 @@ import com.company.vo.FileVo;
 import com.company.exception.UploadException;
 import com.company.service.adapter.FileServiceAdapter;
 import com.company.util.FileUtils;
-import org.apache.catalina.loader.WebappClassLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
@@ -71,9 +71,13 @@ public class FileServiceImpl extends FileServiceAdapter {
 
     }
 
+
+
     /**
      * 分块上传文件
      *
+     *
+     * @param session
      * @param userId
      * @param md5
      * @param size
@@ -85,63 +89,64 @@ public class FileServiceImpl extends FileServiceAdapter {
      */
     @Override
     @Transactional
-    public Boolean uploadWithBlock(Long userId, String name,
+    public Boolean uploadWithBlock(HttpSession session, Long userId, String name,
                                    String md5,
                                    Long size,
                                    Integer chunks,
                                    Integer chunk,
                                    MultipartFile file, String uploadPath) throws Exception {
-        //文件库中不存在文件
-        String[] split = name.split("\\.");
+        if(checkMd5(md5, userId)) {
+            //文件库中不存在文件
+            String[] split = name.split("\\.");
 //        保存真实名称
-        String realName = name;
-        // 使用默认单例（加载默认词典）
-        SensitiveFilter filter = SensitiveFilter.getIntances();
-        String afterFilter = filter.filter(realName, '*');
-        if (!realName.equals(afterFilter)) {
-            System.out.println(realName + ":" + afterFilter);
-            throw new Exception("文件含有违法信息");
-        }
-
-//        文件随机名
-        String path = uploadPath + "/" + name;
-        String fileName = getFileName(md5, chunks) + "." + split[1];
-
-        FileVo fileVo1 = checkMd5(md5);
-        try{
-            if(fileVo1 != null){
-                //文件库中存在文件
-                FileUser fileUser = wrapperFileuser(userId, fileVo1.getId(), realName, uploadPath);
-                fileUserMapper.save(fileUser);
-            }else{
-                try {
-                    FileUtils.writeWithBlock(path, size, file.getInputStream(), file.getSize(), chunks, chunk);
-                    addChunk(md5, chunk);
-                    if (isUploaded(md5)) {
-                        removeKey(md5);
-                        FileVo fileVo = wrapperFileVo(userId, path, name, md5, realName);
-                        fileMapper.save(fileVo);
-                        //System.out.println(fileVo.getId());
-                        FileUser fileUser = wrapperFileuser(userId, fileVo.getId(), realName, uploadPath);
-                        fileUserMapper.save(fileUser);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    java.io.File f = new java.io.File(path);
-                    System.out.println(f.exists());
-                    if (f.exists()) {
-                        f.delete();
-                    }
-                    throw new UploadException("上传出错");
-
-                }
+            String realName = name;
+            // 使用默认单例（加载默认词典）
+            SensitiveFilter filter = SensitiveFilter.getIntances();
+            String afterFilter = filter.filter(realName, '*');
+            if (!realName.equals(afterFilter)) {
+                System.out.println(realName + ":" + afterFilter);
+                throw new Exception("文件含有违法信息");
             }
 
-        }catch(Exception e){
-            throw new UploadException("上传出错");
+//        文件随机名
+            String path = uploadPath + "/" + name;
+            String fileName = getFileName(md5, chunks) + "." + split[1];
+
+            FileVo fileVo1 = checkMd5(md5);
+
+            try{
+                if(fileVo1 != null){
+                    //文件库中存在文件
+                    FileUser fileUser = wrapperFileuser(userId, fileVo1.getId(), realName, uploadPath);
+                    fileUserMapper.save(fileUser);
+                }else{
+                    try {
+                        FileUtils.writeWithBlock(path, size, file.getInputStream(), file.getSize(), chunks, chunk);
+                        addChunk(md5, chunk);
+                        if (isUploaded(md5)) {
+                            removeKey(md5);
+                            FileVo fileVo = wrapperFileVo(userId, path, name, md5, realName);
+                            fileMapper.save(fileVo);
+                            //System.out.println(fileVo.getId());
+                            FileUser fileUser = wrapperFileuser(userId, fileVo.getId(), realName, uploadPath);
+                            fileUserMapper.save(fileUser);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        java.io.File f = new java.io.File(path);
+                        System.out.println(f.exists());
+                        if (f.exists()) {
+                            f.delete();
+                        }
+                        throw new UploadException("上传出错");
+
+                    }
+                }
+
+            }catch(Exception e){
+                throw new UploadException("上传出错");
+            }
         }
-
-
         return true;
     }
 
@@ -152,7 +157,7 @@ public class FileServiceImpl extends FileServiceAdapter {
         fileVo.setAbsolutePath(path.substring(0, path.lastIndexOf("/") ));
         String[] strings = path.split("/");
         fileVo.setParentName(strings[strings.length - 2]);
-        fileVo.setUrl(uploadConfig.getIp() + "/static/" + path.split("static/")[1]);
+        fileVo.setUrl(uploadConfig.getIp() + "/static" + path.split("static")[1]);
         System.out.println(fileVo);
         return fileVo;
     }

@@ -175,19 +175,19 @@ public class FileOperationServiceImpl extends FileOperationServiceAdapter {
     @Transactional
     public boolean deleteDataInMysql(Long fid,String path,Long id){
         try{
-            String[] split = path.split("/");
-            String s = split[split.length - 1];
-            if(!s.contains(".")){
-                List<Long> fidList = fileUSerMapper.findFid(id, fid);
-                fidList.forEach((f) ->{
-                    deleteDataInMysql(f,path,id);
-                });
+            if(!path.contains(".")){
+                List<FileVo> fidList = fileUSerMapper.findFid(id, fid);
+                for (FileVo fileVo:fidList) {
+                    System.out.println(fileVo.getName());
+                    deleteDataInMysql(fileVo.getId(),fileVo.getPath(),id);
+                }
+
             }
             int count = fileUSerMapper.getCount(fid);
             fileUSerMapper.deleteData(id,fid,false);
             System.out.println(count == 1);
-            System.out.println(count);
             if(count == 1){
+                System.out.println(count);
                 fileUSerMapper.deleteFile(fid);
                 delete(path);
             }

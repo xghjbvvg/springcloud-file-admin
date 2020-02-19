@@ -32,7 +32,7 @@ public interface FileUserMapper {
      */
     int deleteData(Long uid,Long fid,boolean flag);
 
-    List<Long> findFid(Long uid,Long parentId);
+    List<FileVo> findFid(Long uid,Long parentId);
 
     List<FileVo> findFileByType(String path, String regex, String userId, Boolean flag);
 

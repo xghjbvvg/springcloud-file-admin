@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
+
 @RequestMapping("/file")
 @RestController
 public class FileController {
@@ -28,9 +30,10 @@ public class FileController {
      * @throws Exception
      */
     @RequestMapping("/fileUpload")
-    public void upload(Long uid, String name, String md5, Long size, Integer chunks, Integer chunk, String uploadPath, MultipartFile file) throws Exception {
+    public void upload(HttpSession session,Long uid, String name, String md5, Long size, Integer chunks, Integer chunk, String uploadPath, MultipartFile file) throws Exception {
+
         if (chunks != null && chunks != 0) {
-            fileService.uploadWithBlock(uid,name, md5, size, chunks, chunk, file,uploadPath);
+            fileService.uploadWithBlock(session,uid,name, md5, size, chunks, chunk, file,uploadPath);
         } else {
             fileService.upload(uid,name, md5, file,uploadPath);
         }
@@ -49,7 +52,6 @@ public class FileController {
     @GetMapping("/initFile/{uid}")
     public Boolean initFile(@PathVariable Long uid){
         try{
-            System.out.println(6666);
             fileService.initUserFile(uid);
             return true;
         }catch (Exception e){

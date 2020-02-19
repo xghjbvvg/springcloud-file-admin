@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-//@Component
+@Component
 @Order(1)
 public class SystemDataInit implements CommandLineRunner {
     @Autowired

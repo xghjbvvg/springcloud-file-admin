@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.UserMapper">
+    <select id="getAllUser" resultType="com.company.domain.User">
+        select *
+        from `user`
+        <where>
+            <if test="username != null">
+                username like CONCAT('%',#{username},'%')
+            </if>
+        </where>
+
+    </select>
+
+    <update id="changeRole">
+        update user_roles
+        set roles_id = #{roleId}
+        WHERE user_id in
+        <foreach collection="uidList" index="index" item="item"
+                 separator="," open="(" close=")">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+
+    </update>
+
+    <select id="getUsersByRole" resultType="com.company.domain.User">
+        select *
+        from user u left join user_roles r on u.id = r.user_id
+        where roles_id = #{role_id}
+    </select>
+
+</mapper>

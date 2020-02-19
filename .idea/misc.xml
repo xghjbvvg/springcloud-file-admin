@@ -15,9 +15,13 @@
         <option value="$PROJECT_DIR$/gateway-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/image-service/pom.xml" />
         <option value="$PROJECT_DIR$/email-service/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-admin-service/pom.xml" />
         <option value="$PROJECT_DIR$/file-service/pom.xml" />
         <option value="$PROJECT_DIR$/friends-service/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamic-service/pom.xml" />
+        <option value="$PROJECT_DIR$/more-service/pom.xml" />
+        <option value="$PROJECT_DIR$/admin-service/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin-service/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-admin-service/pom.xml" />
       </list>
     </option>
   </component>

@@ -33,10 +33,10 @@
     </delete>
 
     <delete id="deleteUser">
-        delete u,r,f,l,c
+        SET foreign_key_checks = 0;
+        delete u,r,f,l
         from `user`as u left join user_roles as r on u.id = r.user_id
-            left join file f on u.id = f.uid
-            left join common_file c on c.userId = u.id
+            left join file_user f on u.id = f.uid
             left join login_history l on u.id = l.uid
         where u.id = #{id} or username = #{username}
     </delete>
@@ -99,6 +99,12 @@
         update `user`
         set image_url = #{imageUrl}
        where id = #{id} or username = #{username}
+    </update>
+
+    <update id="updatePassByEmail">
+        update `user`
+        set password = #{password}
+         where email = #{email}
     </update>
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.NoteMapper">
+    <resultMap id="noteMapper" type="com.company.domain.Note">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="htmlContent" property="htmlContent"/>
+        <result column="date" property="dateVo"/>
+        <association property="user" column="uid" javaType="com.company.domain.User">
+            <id column="uid" property="id"/>
+        </association>
+    </resultMap>
+    <select id="getAllNotes" resultMap="noteMapper">
+        select id,title,content,htmlContent,date,uid
+        from note n
+        where  uid = #{uid} and date between #{startTime}and#{endTime}
+    </select>
+    <select id="getById" resultMap="noteMapper">
+        select id,title,content,htmlContent,date,uid
+        from note
+        where id=#{id}
+    </select>
+    <insert id="saveNote">
+        insert into note(title,content,htmlContent,date,uid)
+        values (#{title},#{content},#{htmlContent},#{date},#{user.id})
+    </insert>
+    <delete id="deleteNote">
+        delete
+        from note
+        where id = #{id}
+    </delete>
+
+    <update id="updateNote">
+        update note
+        set  content = #{content}, date =#{date},title= #{title}
+        where id = #{id}
+    </update>
+</mapper>

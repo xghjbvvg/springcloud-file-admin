@@ -3,7 +3,7 @@ package com.company.service.impl;
 import com.company.service.IFileService;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class FileHystrixService implements IFileService {
     @Override
     public Boolean initFile(Long uid) {

@@ -1,7 +1,50 @@
 eureka:
-  instance:
-    hostname: 175.24.102.154
-    statuspageUrl: http://175.24.102.154:8768/index
   client:
     serviceUrl:
-      defaultZone: http://120.78.88.169:8761/eureka,http://120.78.88.169:8762/eureka,http://120.78.88.169:8763/eureka
+      defaultZone: http://120.78.88.169:8762/eureka
+  instance:
+    hostname: 120.78.88.169
+    statuspageUrl: http://120.78.88.169:8768/index
+spring:
+  application:
+    name: auth-service
+  redis:
+    database: 0
+    host: 120.78.88.169
+    port: 6379
+    password:
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.78.88.169:3306/file?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 69C467895aab
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  zipkin:
+    base-url: http://47.112.188.28:9411/
+    locator:
+      discovery:
+        enabled: true
+  boot:
+    admin:
+      client:
+        url: http://120.78.88.169:8080
+
+
+server:
+  port: 8768
+
+#
+logging:
+  pattern:
+    level: INFO
