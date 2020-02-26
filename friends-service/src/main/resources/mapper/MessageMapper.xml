@@ -25,7 +25,7 @@
     </insert>
     <update id="updateFlag" keyProperty="mid">
         update message
-        set flag = 3
+        set flag = 3,isRead = 0
         where id = #{mid}
     </update>
     <select id="getUserMsg" resultMap="messageResult">
@@ -70,32 +70,50 @@
         where o.fid = f.id and o.uid = #{uid} and o.parentId = #{parentId}
     </select>
     <select id="getMsgSession" resultType="com.company.vo.MessageSessionVo">
-        SELECT
-            m.`to`,
-            username,
-            image_url,
-            message,
-            flag,
-            unread.count unread,
-            m.date
-        FROM
-            message m
-            LEFT JOIN `user` u ON m.`to` = u.id
-            LEFT JOIN (
-            SELECT
-                count( isRead = 1 OR NULL ) count,
-                `to`
-            FROM
-                message
-            WHERE
-            `from` = #{uid} or `to` = #{uid}) unread ON m.`to` = unread.`to`
-        WHERE
-            m.date IN ( SELECT max( date ) FROM message GROUP BY `to` )
+           SELECT
+	m.id,m.`from`,m.`to`,m.message,m.username,m.image_url imageUrl,m.flag,m.date,
+	m2.unread
+FROM
+	(
+	SELECT
+	  m1.id,
+		m1.`from`,
+		u.id `to`,
+		username,
+		image_url,
+		if(flag = 0,'[文件]',message) message,
+		flag,
+		m1.date
+	FROM
+		message m1
+		LEFT JOIN `user` u ON
+	CASE
 
-        GROUP BY
-            m.`from`
-        ORDER BY
-            m.date DESC
+			WHEN `from` = #{uid} THEN
+			m1.`to` = u.id ELSE m1.`from` = u.id
+		END
+		WHERE
+			m1.`from` = #{uid}
+			OR m1.`to` = #{uid}
+			) m,(
+		SELECT
+			id,
+	 		count( isRead = 1 OR NULL ) unread,
+			`to`
+		FROM
+			message
+		WHERE
+			(`from` = #{uid}
+			OR `to` = #{uid})  and flag BETWEEN 0 AND 1
+		GROUP BY
+			`from`
+		) m2
+	WHERE
+	 m.date in ( SELECT max( date ) FROM message WHERE flag BETWEEN 0 AND 1 AND ( `from` = #{uid} OR `to` = #{uid} )  )
+GROUP BY m.`from`
+ORDER BY
+	m.date DESC
+
     </select>
     <update id="updateMsgRead">
         update message

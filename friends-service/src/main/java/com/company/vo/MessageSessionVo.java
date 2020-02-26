@@ -7,10 +7,11 @@ import java.util.Date;
 @Data
 public class MessageSessionVo {
     private Long to;
-    private String image_url;
+    private Long from;
+    private String imageUrl;
     private String username;
     private String message;
-    private Boolean flag;
+    private Integer flag;
     private Integer unread;
     private Date date;
 }

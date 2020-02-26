@@ -31,6 +31,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
 
                 .authorizeRequests()
+                .antMatchers("/file/static/**").permitAll()
                 .antMatchers("/file/initFile").permitAll()
                 .antMatchers("/file/deleteUserFile").permitAll()
                 .antMatchers("/file/*").authenticated()

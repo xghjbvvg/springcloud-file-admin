@@ -77,8 +77,8 @@ public class FriendsController {
 
 
     @RequestMapping("/getFriendDetail")
-    public Friend getFriendDEtail(Long friendId){
-        return friendService.getFriendDetail(friendId);
+    public Friend getFriendDEtail(Long friendId,Long uid){
+        return friendService.getFriendDetail(friendId,uid);
     }
 
     @RequestMapping("/getFriend")

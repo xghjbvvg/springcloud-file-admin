@@ -61,8 +61,8 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
         //名字
         fileItem.setName(fileVo.getName());
         //绝对路径
-        String uri = f.toURI().getPath();
-        String split = null;
+//        String uri = f.toURI().getPath();
+//        String split = null;
         fileItem.setUrl(fileVo.getUrl());
         fileItem.setPath(fileVo.getPath());
         fileItem.setAbsolutePath(fileVo.getAbsolutePath());
@@ -70,9 +70,11 @@ public abstract class FileMenuServiceAdapter implements FileMenuService {
         fileItem.setParentName(fileVo.getParentName());
         //修改时间
         fileItem.setDateMillis(f.lastModified());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        String format = dateFormat.format(f.lastModified());
-        fileItem.setDate(format);
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//        String format = dateFormat.format();
+        StringBuilder uploadTime = new StringBuilder();
+        uploadTime.append(fileVo.getUploadTime());
+        fileItem.setDate(uploadTime.toString());
         //大小
         fileItem.setRealSize(f.length());
         String size = null;

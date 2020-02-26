@@ -51,6 +51,7 @@ public class FriendServiceImpl implements FriendService {
         msg.setFrom(uid);
         msg.setMessage("添加你为好友");
         msg.setFlag(2);
+        msg.setIsRead(1);
         msg.setDate(new Date().toString());
         try{
             messageService.saveMessage(msg);
@@ -129,9 +130,8 @@ public class FriendServiceImpl implements FriendService {
     }
 
     @Override
-    public Friend getFriendDetail(Long friendId) {
-        Friend detail = friendMapper.getFriendDetail(friendId);
-        System.out.println(detail);
+    public Friend getFriendDetail(Long friendId,Long uid) {
+        Friend detail = friendMapper.getFriendDetail(friendId,uid);
         return detail;
     }
 

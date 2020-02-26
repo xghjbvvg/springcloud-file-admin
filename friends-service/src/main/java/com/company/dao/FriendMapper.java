@@ -20,7 +20,7 @@ public interface FriendMapper {
     User checkCode(Long code);
 
 
-    Friend getFriendDetail(Long friendId);
+    Friend getFriendDetail(Long friendId,Long uid);
 
     User getFriend(Long to);
 }

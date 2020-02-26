@@ -1,6 +1,7 @@
 package com.company.controller;
 
 
+import com.company.service.adapter.FileOperationServiceAdapter;
 import com.company.vo.FileItem;
 import com.company.service.FileFinderService;
 import com.company.service.enumPackage.SortType;
@@ -27,6 +28,8 @@ public class FileOperationController {
 
     @Autowired
     FileFinderService fileFinderService;
+    @Autowired
+    FileOperationServiceAdapter fileOperationServiceAdapter;
 
     /**
      * 文件下载

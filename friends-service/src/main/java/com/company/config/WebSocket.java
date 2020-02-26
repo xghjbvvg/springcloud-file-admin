@@ -126,8 +126,8 @@ public class WebSocket {
             messageVo.setIsRead(0);
         } else {
             messageVo.setIsRead(1);
-
         }
+
         //保存信息
         messageUtil.setMessage(messageVo);
         new Thread(messageUtil).start();

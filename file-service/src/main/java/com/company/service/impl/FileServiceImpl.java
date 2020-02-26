@@ -10,6 +10,7 @@ import com.company.exception.UploadException;
 import com.company.service.adapter.FileServiceAdapter;
 import com.company.util.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ClassUtils;
@@ -33,6 +34,11 @@ public class FileServiceImpl extends FileServiceAdapter {
 
     @Autowired
     UploadConfig uploadConfig;
+
+
+    @Value("${file.uploadFolder}")
+    private String path;
+
 
 
     private final String absolutePath = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/file/common";
@@ -153,11 +159,14 @@ public class FileServiceImpl extends FileServiceAdapter {
 
     public FileVo wrapperFileVo(Long userId, String path, String name, String md5, String realName) {
 
-        FileVo fileVo = new FileVo(realName, md5, path, new Date());
+        FileVo fileVo = new FileVo();
+        fileVo.setName(realName);
+        fileVo.setMd5(md5);
+        fileVo.setPath(path);
         fileVo.setAbsolutePath(path.substring(0, path.lastIndexOf("/") ));
         String[] strings = path.split("/");
         fileVo.setParentName(strings[strings.length - 2]);
-        fileVo.setUrl(uploadConfig.getIp() + "/static" + path.split("static")[1]);
+        fileVo.setUrl(uploadConfig.getIp() + path.split("uploadFiles/")[1]);
         System.out.println(fileVo);
         return fileVo;
     }
@@ -170,7 +179,7 @@ public class FileServiceImpl extends FileServiceAdapter {
         fileuser.setParentPath(parentPath);
         fileuser.setFlag(true);
 //        如果上传路径为根目录
-        if (fileuser.getParentPath().equals(uploadConfig.getAbsolutePath() + "file/common")) {
+        if (fileuser.getParentPath().equals(path)) {
             fileuser.setIsRoot(true);
             fileuser.setParentId("#" + uid);
         }
@@ -213,15 +222,6 @@ public class FileServiceImpl extends FileServiceAdapter {
         String temp = absolutePath;
 
         for (int i = 1; i < folder.length; i++) {
-                 /* FileVo fileVo = new FileVo();
-                fileVo.setName(folder[i]);
-                fileVo.setUploadTime(new Date());
-                fileVo.setPath(path);
-                fileVo.setParentName(folder[0]);
-                fileVo.setAbsolutePath(temp);
-
-                String url= uploadConfig.getIp()+"/static/"+str;
-                fileVo.setUrl(url);*/
             String str = "/" + folder[i];
             String path = temp + str;
             FileUser fileUser = new FileUser();

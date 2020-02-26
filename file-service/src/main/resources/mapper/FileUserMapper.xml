@@ -10,7 +10,7 @@
         <result column="parentId" property="parentId"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id,o.name,md5,path,upload_time,absolutePath,parentName,url
+        id,o.name,md5,path,o.create_time uploadTime,absolutePath,parentName,url
     </sql>
 
     <insert id="save">

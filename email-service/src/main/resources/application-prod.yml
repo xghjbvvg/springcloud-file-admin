@@ -1,8 +1,8 @@
 eureka:
   instance:
-    ip-address: 118.31.4.159
+    ip-address: 120.78.88.169
     prefer-ip-address: true
-    instance-id: 118.31.4.159:9094
+    instance-id: 120.78.88.169
   client:
     service-url:
       #      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
@@ -18,8 +18,12 @@ spring:
     properties:
       mail:
         smtp:
-          port: 25
+          port: 465
           auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+            port: 465
           starttls:
             enable: true
     port: 25

@@ -3,6 +3,7 @@ package com.company.util;
 import com.company.config.UploadConfig;
 import org.apache.catalina.loader.WebappClassLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -53,12 +54,15 @@ public class SensitiveFilter implements Serializable{
 		
 	}
 
-	public static SensitiveFilter getIntances() throws FileNotFoundException {
+	public static SensitiveFilter getIntances() throws Exception {
 		synchronized (SensitiveFilter.class){
 			if(DEFAULT == null){
 				UploadConfig uploadConfig = new UploadConfig();
-				FileInputStream fileInputStream = new FileInputStream(uploadConfig.getAbsolutePath()+"sensi_words.txt");
-				InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8);
+				ClassPathResource resource = new ClassPathResource("static/sensi_words.txt");
+				InputStream inputStream = resource.getInputStream();
+				//以下代码部署linux会报FileNotFoundException
+				//FileInputStream fileInputStream = new FileInputStream(uploadConfig.getAbsolutePath()+"sensi_words.txt");
+				InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
 				BufferedReader reader = new BufferedReader(inputStreamReader);
 				System.out.println(reader);
 				DEFAULT = new SensitiveFilter(reader);

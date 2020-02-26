@@ -56,7 +56,7 @@
     <update id="updateVote">
         update dynamic
         set starCount = starCount+#{num}
-        where id = #{did} and uid=#{uid}
+        where id = #{did}
     </update>
     <insert id="saveVoteRelation">
         insert into user_dynamic

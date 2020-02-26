@@ -3,6 +3,7 @@ package com.company.config;
 import com.company.dao.FileMapper;
 import com.company.vo.FileVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,13 @@ public class SystemDataInit implements CommandLineRunner {
     @Autowired
     FileMapper fileMapper;
 
+
+
+    @Value("${file.uploadFolder}")
+    private String path;
+
+
+
     /**
      * 文件目录初始化
      *
@@ -27,31 +35,35 @@ public class SystemDataInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //文件根路径
-        String temp = uploadConfig.getAbsolutePath() + "/file/common";
+        String temp = path;
 //
         String[] folder = new String[]{"my", "pic", "doc", "vedio", "music"};
         for (int i = 0; i < folder.length; i++) {
-            String str = "/" + folder[i];
+            String str =  folder[i];
             String path = temp + str;
 
             FileVo fileVo = new FileVo();
             fileVo.setName(folder[i]);
 //            fileVo.setUploadTime(new Date());
             fileVo.setPath(path);
-            fileVo.setParentName("common");
+            fileVo.setParentName("uploadFolder");
             fileVo.setAbsolutePath(temp);
-            String url = uploadConfig.getIp() + "/static/file/common/" + str;
+            String url = uploadConfig.getIp() + str;
             fileVo.setUrl(url);
-            try {
 
+            System.out.println(fileVo);
+            java.io.File file = new java.io.File(path);
+            if(!file.exists()){
+                file.mkdirs();
+            }else{
+                break;
+            }
+            try {
                 int save = fileMapper.save(fileVo);
                 System.out.println(save);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println(fileVo);
-            java.io.File file = new java.io.File(path);
-            file.mkdirs();
         }
     }
 }

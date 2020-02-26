@@ -3,8 +3,8 @@ eureka:
     serviceUrl:
       defaultZone: http://120.78.88.169:8762/eureka
   instance:
-    hostname: 120.78.88.169
-    statuspageUrl: http://120.78.88.169:8768/index
+    hostname: 118.31.4.159
+    statuspageUrl: http://118.31.4.159:8768/index
 spring:
   application:
     name: auth-service
@@ -13,7 +13,8 @@ spring:
     host: 120.78.88.169
     port: 6379
     password:
-    timeout: 5000
+    timeout: 50000
+
     jedis:
       pool:
         max-active: 8

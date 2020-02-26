@@ -5,322 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1772ac4a-bc01-408c-b894-5809cbff9c0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_client_2_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_starter_server_2_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_registry_prometheus_1_1_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_45_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_addons_reactor_extra_3_3_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_prometheus_simpleclient_0_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_prometheus_simpleclient_common_0_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_core_2_0_26_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_servlet_2_0_26_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_websockets_jsr_2_0_26_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_context_log4j2_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_http_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpasyncclient_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpclient_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_jms_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_kafka_clients_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_servlet_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_rabbit_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_web_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_webmvc_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_java_zipkin_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_java_zipkin_autoconfigure_metrics_prometheus_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_java_zipkin_autoconfigure_ui_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_java_zipkin_server_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_java_zipkin_ui_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_amqp_client_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_kafka_2_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_zipkin2_zipkin_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_zipkin2_zipkin_2_16_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_zipkin2_zipkin_collector_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_jul_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j_impl_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_2_spec_1_0_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_websocket_jboss_websocket_api_1_1_spec_1_1_4_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_3_8_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_8_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_log4j2_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_undertow_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_core_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_zipkin_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_sleuth_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_zipkin_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/controller/QuestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/dao/QuestionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/dao/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/EmailFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/IQuestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/impl/EmailHystrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/impl/QuestionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/java/com/company/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-service/src/main/resources/mapper/questionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/DynamicServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/controller/DynamicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/dao/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/dao/DynamicMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/service/ICommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/service/IDynamicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/service/impl/DynamicServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/util/ListUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/util/Patterns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/java/com/company/util/RegexUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/commentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/dynamicMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-service/src/test/java/com/company/DynamicServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/email-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/email-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/friends-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/util/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/MessageSessionVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/MoreServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/config/Scheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/controller/NoteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/dao/EmailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/dao/NoteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/EmailFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/IEmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/INoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/impl/EmailHystrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/impl/EmailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/impl/NoteServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/util/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/mapper/emailMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/mapper/noteMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/more-service/src/test/java/com/company/MoreServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Dynamic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Note.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/domain/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/src/main/java/com/company/ZipkinServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zipkin-service/src/test/java/com/company/ZipkinServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/UploadConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_2_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_2_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_cloud_2_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_cloud_2_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_ui_2_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_server_ui_2_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_starter_server_2_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_codecentric_spring_boot_admin_starter_client_2_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring-cloud-file-admin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/src/main/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/java/com/company/CloudAdminServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/src/main/java/com/company/CloudAdminServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/java/com/company/config/SecuritySecureConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/java/com/company/controller/NotificationFilterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-admin-service/src/test/java/com/company/CloudAdminServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-admin-service/src/test/java/com/company/CloudAdminServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/dynamicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/dynamicMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/java/com/company/EmailServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/java/com/company/EmailServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/java/com/company/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/java/com/company/controller/EmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/java/com/company/service/IEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/java/com/company/service/IEmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/java/com/company/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/java/com/company/service/impl/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/SystemDataInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/SystemDataInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/dao/FileUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileFinderServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileFinderServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileOperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileOperationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.sql" beforeDir="false" afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/MessageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/MessageSessionVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/MessageSessionVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/test/java/com/company/FriendsServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/test/java/com/company/FriendsServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-zuul/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-zuul/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/ServiceCommonApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/ServiceCommonApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/controller/UserUpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/dao/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserUpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/IUserUpdateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/FileHystrixService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/FileHystrixService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserUpdateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/company/service/impl/UserUpdateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" afterDir="false" />
     </list>
@@ -381,7 +119,7 @@
     <property name="android.sdk.path" value="D:/Android" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/more-service/src/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/image-service/src/main/resources/static/head" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -391,18 +129,22 @@
     <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.company.service.impl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources\mapper" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\target\classes\static\head" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources\static" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.company" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static\head" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main\resources" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\email-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.company.service" />
@@ -411,12 +153,8 @@
       <recent name="com.company.repository" />
       <recent name="com.company.domain" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources\mapper" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\target\classes\static\head" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources\static" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.company.service.impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -618,12 +356,12 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.2889138" />
+        <option name="contentProportion" value="0.17002012" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d1d023e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3bd157e6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -675,7 +413,12 @@
       <workItem from="1581576282092" duration="605000" />
       <workItem from="1581583719464" duration="56801000" />
       <workItem from="1582001961975" duration="374000" />
-      <workItem from="1582005216154" duration="27579000" />
+      <workItem from="1582005216154" duration="46331000" />
+      <workItem from="1582168108976" duration="53991000" />
+      <workItem from="1582347705557" duration="5766000" />
+      <workItem from="1582354113447" duration="6698000" />
+      <workItem from="1582371912535" duration="21740000" />
+      <workItem from="1582546725777" duration="16991000" />
     </task>
     <servers />
   </component>

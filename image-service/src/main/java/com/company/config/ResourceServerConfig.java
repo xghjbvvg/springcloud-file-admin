@@ -9,6 +9,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * @author 黄炽鑫
  * @date 2019.9.21

@@ -4,8 +4,11 @@ eureka:
       defaultZone: http://120.78.88.169:8762/eureka
 server:
   port: 9001
-
-imgBasePath: http://localhost:8763/static/head
+file:
+  staticAccessPath: /static/head/**
+  #文件上传目录（注意Linux和Windows上的目录结构不同）
+  uploadFolder: d://uploadFiles/
+imgBasePath: http://localhost:9001/static/head
 spring:
   application:
     name: image-service

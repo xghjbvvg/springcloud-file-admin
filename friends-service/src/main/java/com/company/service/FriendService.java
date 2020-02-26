@@ -25,7 +25,7 @@ public interface FriendService {
 
     int remove(Long mid);
 
-    Friend getFriendDetail(Long friendId);
+    Friend getFriendDetail(Long friendId,Long uid);
 
     User getFriend(Long to);
 }

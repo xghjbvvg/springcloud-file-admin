@@ -2,6 +2,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://120.78.88.169:8762/eureka
+  instance:
+    hostname: 118.31.4.159
+    statuspageUrl: http://118.31.4.159:8763/index
 spring:
   application:
     name: gateway-service
@@ -16,7 +19,7 @@ spring:
         # -----------------------鉴权模块----------------
         - id: auth-service
           # 路由指向具体的服务实例
-          uri: http://120.78.88.169:8768
+          uri: http://118.31.4.159:8768
           # 带指定请求头的URL转发到相应的服务实例
           predicates:
             - Path= /oauth/*,/auth/*
@@ -36,7 +39,7 @@ spring:
           predicates:
             - Path= /static/**,/upload
         - id: email-service
-          uri: http://118.31.4.159:8000
+          uri: http://120.78.88.169:8000
           predicates:
             - Path= /email/**
         - id: file-service
@@ -74,11 +77,11 @@ spring:
 security:
   oauth2:
     client:
-      access-token-uri: http://47.112.188.28:${server.port}/oauth/token
-      user-authorization-uri: http://47.112.188.28:${server.port}/oauth/authorize
+      access-token-uri: http://${eureka.instance.hostname}:${server.port}/oauth/token
+      user-authorization-uri: http://${eureka.instance.hostname}:${server.port}/oauth/authorize
       client-id: webapp
     resource:
-      user-info-uri:  http://47.112.188.28:${server.port}/auth/user
+      user-info-uri:  http://${eureka.instance.hostname}:${server.port}/auth/user
       prefer-token-info: false
 
 hystrix:

@@ -3,7 +3,6 @@ package com.company.vo;
 import lombok.Data;
 
 import java.io.Serializable;
-
 @Data
 public class FileItem implements Serializable {
     private Long id;

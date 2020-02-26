@@ -33,12 +33,17 @@
     </delete>
 
     <delete id="deleteUser">
-        SET foreign_key_checks = 0;
-        delete u,r,f,l
-        from `user`as u left join user_roles as r on u.id = r.user_id
-            left join file_user f on u.id = f.uid
-            left join login_history l on u.id = l.uid
-        where u.id = #{id} or username = #{username}
+       delete from user_roles where user_id = #{id};
+       DELETE
+        u,
+        f,
+        l
+    FROM
+	`user` AS u
+	LEFT JOIN file_user f ON u.id = f.uid
+	LEFT JOIN login_history l ON u.id = l.uid
+WHERE
+	u.id = #{id}
     </delete>
 
     <select id="isExistUsername" resultType="java.lang.Integer">

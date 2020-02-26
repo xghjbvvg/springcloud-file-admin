@@ -1,7 +1,7 @@
 server:
   port: 9090
 upload:
-  ip: http://47.112.188.28:9090
+  ip: http://120.78.88.169:8763/file/static/
 spring:
   application:
     name: file-service
@@ -57,7 +57,10 @@ spring:
     admin:
       client:
         url: http://120.78.88.169:8080
-
+file:
+  staticAccessPath: /file/static/**
+  #文件上传目录（注意Linux和Windows上的目录结构不同）
+  uploadFolder: /root/uploadFiles/
 logging:
   level:
     com.company.dao: debug

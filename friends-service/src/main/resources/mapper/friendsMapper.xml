@@ -49,7 +49,7 @@
         from friends f,
             `user` u
         where f.friendId = u.id
-            AND friendId = #{friendId}
+            AND friendId = #{friendId}  AND userId = #{uid}
     </select>
     <select id="getFriend" resultType="com.company.domain.User">
         select   id ,username ,image_url imageUrl

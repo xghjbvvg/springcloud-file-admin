@@ -1,10 +1,12 @@
 package com.company.service.adapter;
 
+import com.company.config.WebConfig;
 import com.company.vo.FileItem;
 import com.company.service.FileOperationService;
 import com.company.service.enumPackage.SortType;
 import com.company.service.impl.FileMenuServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +24,8 @@ public abstract class FileOperationServiceAdapter implements FileOperationServic
     @Autowired
     FileMenuServiceImpl fileMenuService;
 
+    @Autowired
+    private WebConfig webConfig;
     /**
      * 文件排序，调用sort（）
      *
@@ -30,10 +34,15 @@ public abstract class FileOperationServiceAdapter implements FileOperationServic
      * @return
      */
     public List<FileItem> sortBySortType(Long uid,String path, SortType sortType) {
-        File file = new File(path);
-        List<FileItem> fileItemList = new ArrayList<>();
-        List<FileItem> fileTItems = fileMenuService.getAllFileItems(uid,path,false);
-        return sort(fileTItems, sortType);
+//        File file = new File(path);
+//        List<FileItem> fileItemList = new ArrayList<>();
+        List<FileItem> fileItems = null;
+        if(path.equals(webConfig.getRootPath())){
+            fileItems =  fileMenuService.getMainMenu(uid);
+        }else{
+            fileItems = fileMenuService.getAllFileItems(uid,path,false);
+        }
+        return sort(fileItems, sortType);
     }
 
     /**

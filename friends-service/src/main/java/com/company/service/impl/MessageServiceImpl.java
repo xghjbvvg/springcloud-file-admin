@@ -101,7 +101,9 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public  List<MessageSessionVo> getMsgSession(Long uid) {
-        return messageMapper.getMsgSession(uid);
+        List<MessageSessionVo> msgSession = messageMapper.getMsgSession(uid);
+        System.out.println(msgSession);
+        return msgSession;
     }
 
     @Override

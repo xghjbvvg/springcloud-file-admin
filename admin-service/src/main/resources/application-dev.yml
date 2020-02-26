@@ -101,7 +101,7 @@ eureka:
   client:
     fetchRegistry: true
     service-url:
-      defaultZone:http://120.78.88.169:8762/eureka
+      defaultZone: http://120.78.88.169:8762/eureka
   instance:
     ip-address: http://localhost:9094
 
