@@ -5,62 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1772ac4a-bc01-408c-b894-5809cbff9c0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/UploadConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image-service/src/main/resources/static/head/bg4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/dynamicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-service/src/main/resources/mapper/dynamicMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/email-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/SystemDataInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/SystemDataInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/UploadConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/controller/FileOperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileMenuServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/adapter/FileOperationServiceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/java/com/company/util/SensitiveFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file-service/src/main/resources/mapper/FileUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.sql" beforeDir="false" afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/config/WebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/controller/FriendsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/dao/FriendMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/FriendService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/FriendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/MessageSessionVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/java/com/company/vo/MessageSessionVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/friends-service/src/main/resources/mapper/friendsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/company/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/company/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-common/src/main/java/com/company/vo/FileVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/mapper/userMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -418,7 +364,7 @@
       <workItem from="1582347705557" duration="5766000" />
       <workItem from="1582354113447" duration="6698000" />
       <workItem from="1582371912535" duration="21740000" />
-      <workItem from="1582546725777" duration="16991000" />
+      <workItem from="1582546725777" duration="17783000" />
     </task>
     <servers />
   </component>
