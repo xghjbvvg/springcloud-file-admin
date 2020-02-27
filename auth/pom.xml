@@ -62,6 +62,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
@@ -176,7 +180,7 @@
                     <!-- 指定 Dockerfile 路径-->
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 
-                    <!--指定远程 docker api地址-->
+                    <!--指定远程 docker api地址  118.31.4.159-->
                     <dockerHost>http://118.31.4.159:2375</dockerHost>
 
                     <!-- 这里是复制 jar 包到 docker 容器指定目录配置 -->

@@ -10,7 +10,7 @@ spring:
     name: auth-service
   redis:
     database: 0
-    host: 120.78.88.169
+    host: 172.18.0.2
     port: 6379
     password:
     timeout: 50000

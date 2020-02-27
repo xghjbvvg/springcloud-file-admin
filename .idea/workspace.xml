@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1772ac4a-bc01-408c-b894-5809cbff9c0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_1_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/dao/QuestionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/IQuestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/more-service/src/main/resources/mapper/questionMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/java/com/company/AuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/more-service/src/main/java/com/company/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/more-service/src/main/java/com/company/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/more-service/src/main/java/com/company/controller/EmailController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +76,7 @@
     <property name="android.sdk.path" value="D:/Android" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/image-service/src/main/resources/static/head" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/more-service/src/main/resources/mapper" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -75,32 +86,33 @@
     <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.company.dao" />
+      <recent name="com.company.service.impl" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.company" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources\mapper" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static\head" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main" />
+      <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.service.impl" />
+      <recent name="com.company.service" />
+      <recent name="com.company.config" />
+      <recent name="com.company.controller" />
+      <recent name="com.company.repository" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources\mapper" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\target\classes\static\head" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources\static" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\file-service\src\main\resources" />
       <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.company" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\image-service\src\main\resources\static\head" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\user-service\src\main\resources" />
-      <recent name="F:\mavenProject2\spring-cloud-file-admin\more-service\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.company.service" />
-      <recent name="com.company.config" />
-      <recent name="com.company.controller" />
-      <recent name="com.company.repository" />
-      <recent name="com.company.domain" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.company.service.impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -304,12 +316,7 @@
       <serviceView>
         <option name="contentProportion" value="0.17002012" />
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3bd157e6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -364,7 +371,7 @@
       <workItem from="1582347705557" duration="5766000" />
       <workItem from="1582354113447" duration="6698000" />
       <workItem from="1582371912535" duration="21740000" />
-      <workItem from="1582546725777" duration="17783000" />
+      <workItem from="1582546725777" duration="35007000" />
     </task>
     <servers />
   </component>

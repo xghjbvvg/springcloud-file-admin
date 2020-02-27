@@ -11,7 +11,7 @@
  Target Server Version : 50718
  File Encoding         : 65001
 
- Date: 26/02/2020 12:39:03
+ Date: 27/02/2020 19:11:04
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,8 @@ CREATE TABLE `authority`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `authority_index`(`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -48,7 +49,9 @@ CREATE TABLE `comment`  (
   `create_time` datetime(0) NULL DEFAULT NULL,
   `dynamic_id` bigint(20) NULL DEFAULT NULL,
   `uid` bigint(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `comment_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `comment_index2`(`uid`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -77,7 +80,9 @@ CREATE TABLE `dynamic`  (
   `firstImage` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `visible` int(1) NULL DEFAULT NULL COMMENT '1：全部；2：好友',
   `uid` bigint(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `dynamic_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `dynamic_index2`(`uid`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -91,7 +96,9 @@ CREATE TABLE `email`  (
   `date` datetime(0) NULL DEFAULT NULL,
   `year` int(1) NULL DEFAULT NULL,
   `uid` bigint(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `email_index1`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `comment_index2`(`uid`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -107,7 +114,8 @@ CREATE TABLE `file`  (
   `url` varchar(2550) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `absolutePath` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '父全路径',
   `parentName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '父路径名',
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `file_index`(`id`) USING BTREE COMMENT '唯一索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -145,7 +153,9 @@ CREATE TABLE `file_user`  (
   `create_time` datetime(0) NULL DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `parentId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`uid`, `fid`) USING BTREE
+  PRIMARY KEY (`uid`, `fid`) USING BTREE,
+  INDEX `file_user_index`(`fid`, `uid`) USING BTREE COMMENT '唯一索引',
+  INDEX `file_user_index2`(`parentId`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -188,7 +198,10 @@ CREATE TABLE `friends`  (
   `date` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0),
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `userId` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `friends_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `friends_index2`(`userId`) USING BTREE COMMENT '外键索引',
+  INDEX `friends_index3`(`friendId`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -221,8 +234,9 @@ CREATE TABLE `login_history`  (
   `way` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `uid` bigint(20) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `FK55itppkw3i07do`(`uid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  INDEX `FK55itppkw3i07do`(`uid`) USING BTREE,
+  INDEX `login_history_index`(`id`) USING BTREE COMMENT '唯一索引'
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of login_history
@@ -231,6 +245,12 @@ INSERT INTO `login_history` VALUES (1, '2020年02月25日 10:48:17', 'Chrome', '
 INSERT INTO `login_history` VALUES (2, '2020年02月25日 11:28:09', 'Chrome', 'PC端', '密码登入', 1);
 INSERT INTO `login_history` VALUES (3, '2020年02月25日 11:55:22', 'Chrome', 'PC端', '密码登入', 1);
 INSERT INTO `login_history` VALUES (4, '2020年02月25日 16:15:25', 'Chrome', 'PC端', '密码登入', 2);
+INSERT INTO `login_history` VALUES (5, '2020年02月26日 08:07:52', 'Chrome', 'PC端', '密码登入', 1);
+INSERT INTO `login_history` VALUES (6, '2020年02月26日 14:29:24', 'Chrome', 'PC端', '密码登入', 1);
+INSERT INTO `login_history` VALUES (7, '2020年02月26日 14:51:07', 'Chrome', 'PC端', '密码登入', 1);
+INSERT INTO `login_history` VALUES (8, '2020年02月26日 16:18:45', 'Chrome', 'PC端', '密码登入', 2);
+INSERT INTO `login_history` VALUES (9, '2020年02月27日 09:21:24', 'Chrome', 'PC端', '密码登入', 1);
+INSERT INTO `login_history` VALUES (10, '2020年02月27日 09:22:09', 'Chrome', 'PC端', '密码登入', 1);
 
 -- ----------------------------
 -- Table structure for message
@@ -244,7 +264,10 @@ CREATE TABLE `message`  (
   `date` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0),
   `flag` int(11) NULL DEFAULT NULL COMMENT '0:文件；1：消息;2:好友请求；3：请求同意；4：请求拒绝',
   `isRead` int(11) NULL DEFAULT NULL COMMENT '0:已读；1：未读',
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `message_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `message_index2`(`from`) USING BTREE COMMENT '外键索引',
+  INDEX `message_index3`(`to`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -258,7 +281,9 @@ CREATE TABLE `note`  (
   `htmlContent` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `date` date NULL DEFAULT NULL,
   `uid` bigint(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `note_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `friends_index2`(`uid`) USING BTREE COMMENT '外键索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -272,8 +297,17 @@ CREATE TABLE `question`  (
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `fromEmail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `flag` int(255) NULL DEFAULT NULL COMMENT '1:未解决；2：已解决',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `question_index`(`id`) USING BTREE COMMENT '唯一索引',
+  INDEX `question_index2`(`fromEmail`) USING BTREE COMMENT '外键索引'
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of question
+-- ----------------------------
+INSERT INTO `question` VALUES (1, 'slow', '2020-02-27 09:35:26', 'slow', '3144933378@qq.com', 1);
+INSERT INTO `question` VALUES (2, 'slow，slow', '2020-02-27 17:24:27', 'slow', '3144933378@qq.com', 1);
+INSERT INTO `question` VALUES (3, 'slow6666', '2020-02-27 17:31:20', 'slow6666', '3144933378@qq.com', 1);
 
 -- ----------------------------
 -- Table structure for role
@@ -285,7 +319,8 @@ CREATE TABLE `role`  (
   `update_time` tinyblob NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `role_index`(`id`) USING BTREE COMMENT '唯一索引'
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -339,8 +374,8 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'hcx', '$2a$10$eJuRIcUZ0fEUEZdj15sjFePE60nOr48Bjmj7jRZ9UbAzZXYPOGgfu', '2020年02月25日 10:48:06', '3144933378@qq.com', NULL, '18370671294');
-INSERT INTO `user` VALUES (2, '再怎么修改也是个憨憨', '$2a$10$CPjDWsUVNIbRK8UwxLwsYeZ1Z1i1VJckA6yXTOXETCclku.91I15y', '2020年02月25日 16:15:16', '3175275172@qq.com', 'http://120.78.88.169:8763/static/images/afafc589521401fa6520ded8573d821d.jpg', '15727614353');
+INSERT INTO `user` VALUES (1, 'hcx', '$2a$10$xMHrXDUwUX9Z202K4UsWSeYG9puyr4cZx3TW9dqLZBJA07QzLjY4G', '2020年02月25日 10:48:06', '3144933378@qq.com', 'http://120.78.88.169:8763/static/images/wallhaven-698428.jpg', '18370671294');
+INSERT INTO `user` VALUES (2, '再怎么修改也是个憨憨', '$2a$10$CPjDWsUVNIbRK8UwxLwsYeZ1Z1i1VJckA6yXTOXETCclku.91I15y', '2020年02月25日 16:15:16', '3175275172@qq.com', '', '15727614353');
 
 -- ----------------------------
 -- Table structure for user_dynamic
@@ -367,6 +402,7 @@ CREATE TABLE `user_roles`  (
   `roles_id` bigint(20) NOT NULL,
   PRIMARY KEY (`user_id`, `roles_id`) USING BTREE,
   INDEX `FKj9553ass9uctjrmh0gkqsmv0d`(`roles_id`) USING BTREE,
+  INDEX `user_role_index`(`roles_id`, `user_id`) USING BTREE COMMENT '外键索引',
   CONSTRAINT `FK55itppkw3i07do3h7qoclqd4k` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKj9553ass9uctjrmh0gkqsmv0d` FOREIGN KEY (`roles_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -374,7 +410,7 @@ CREATE TABLE `user_roles`  (
 -- ----------------------------
 -- Records of user_roles
 -- ----------------------------
-INSERT INTO `user_roles` VALUES (1, 2);
+INSERT INTO `user_roles` VALUES (1, 1);
 INSERT INTO `user_roles` VALUES (2, 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
